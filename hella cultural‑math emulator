@@ -389,3 +389,109 @@ pip install numpy matplotlib
 This logo is the visual signature of your HellaOS symbolic operating system — a universe where math, music, and coffee converge into a living, breathing glyph‑based runtime.
 
 Run the code, and you'll have your main logo glyph ready. Let me know if you'd like any tweaks — scale, colors, or additional symbolism.
+import numpy as np
+import matplotlib.pyplot as plt
+
+# High-res canvas
+fig = plt.figure(figsize=(8, 8), dpi=200)
+ax = fig.add_subplot(111, projection='polar')
+ax.set_facecolor('black')
+ax.set_xticks([])
+ax.set_yticks([])
+ax.grid(False)
+
+# -----------------------------
+# 1. Armored dome (segmented bell)
+# -----------------------------
+num_segments = 32
+theta = np.linspace(0, 2 * np.pi, num_segments + 1)
+
+# Base radius profile for the bell
+r_base = 0.6
+r_variation = 0.04 * np.sin(3 * theta)  # slight organic wobble
+r_bell = r_base + r_variation
+
+# Draw segmented armor plates
+for i in range(num_segments):
+    t0, t1 = theta[i], theta[i + 1]
+    ts = np.linspace(t0, t1, 20)
+    rs = r_base + 0.04 * np.sin(3 * ts)
+
+    # armor edge
+    ax.plot(ts, rs, color=(0.7, 0.9, 1.0), linewidth=1.0)
+
+    # radial segment lines (armor seams)
+    ax.plot([t0, t0], [0.4, r_base],
+            color=(0.4, 0.7, 1.0), linewidth=0.6, alpha=0.7)
+
+# -----------------------------
+# 2. Mechanical tendrils
+# -----------------------------
+num_tendrils = 40
+max_len = 1.4
+
+for i in range(num_tendrils):
+    # angle of tendril
+    t = 2 * np.pi * i / num_tendrils
+
+    # param along tendril
+    s = np.linspace(0, 1, 200)
+
+    # base radial growth
+    r = r_base + 0.05 + s * (max_len - r_base)
+
+    # slight mechanical "jointed" wobble
+    wobble = 0.03 * np.sin(10 * s + i * 0.3)
+    r = r + wobble
+
+    # small angular deviation to avoid perfect symmetry
+    t_dev = 0.04 * np.sin(5 * s + i)
+    theta_t = t + t_dev
+
+    # color gradient along tendril (core -> tip)
+    c_start = np.array([0.3, 0.8, 1.0])  # cyan
+    c_end   = np.array([0.9, 0.3, 0.6])  # magenta
+    colors = c_start[None, :] + (c_end - c_start)[None, :] * s[:, None]
+
+    # draw as short segments to approximate gradient
+    for k in range(len(s) - 1):
+        ax.plot(theta_t[k:k+2], r[k:k+2],
+                color=colors[k], linewidth=0.7, alpha=0.9)
+
+# -----------------------------
+# 3. Core lattice (mechanical nucleus)
+# -----------------------------
+core_r = np.linspace(0.0, 0.35, 80)
+core_theta = np.linspace(0, 2 * np.pi, 80)
+
+for k in range(0, len(core_theta), 4):
+    t0 = core_theta[k]
+    # radial spokes
+    ax.plot([t0, t0], [0.0, 0.35],
+            color=(0.2, 0.9, 1.0), linewidth=0.8, alpha=0.9)
+
+# circular rings
+for rr in np.linspace(0.08, 0.35, 4):
+    ax.plot(core_theta, rr * np.ones_like(core_theta),
+            color=(0.3, 0.95, 1.0), linewidth=0.6, alpha=0.8)
+
+# glowing core
+ax.scatter([0], [0], s=200,
+           color=(0.9, 1.0, 1.0), alpha=0.9)
+
+# -----------------------------
+# 4. Ambient particles
+# -----------------------------
+num_particles = 300
+p_theta = np.random.uniform(0, 2 * np.pi, num_particles)
+p_r = np.random.uniform(0.4, 1.6, num_particles)
+p_c = np.random.uniform(0.4, 1.0, num_particles)
+
+ax.scatter(p_theta, p_r,
+           s=2,
+           c=np.stack([p_c * 0.7, p_c * 0.9, p_c], axis=1),
+           alpha=0.4)
+
+plt.tight_layout()
+plt.show()
+  generate image
