@@ -494,4 +494,29 @@ ax.scatter(p_theta, p_r,
 
 plt.tight_layout()
 plt.show()
-  generate image
+import matplotlib.pyplot as plt
+import networkx as nx
+
+def equation_fabric_wireframe(n_nodes=12):
+    # Build a simple cycle graph to represent the closed core
+    G = nx.cycle_graph(n_nodes)
+    
+    # Add three interlocking rings (physics, semantics, agency)
+    rings = [nx.cycle_graph(n_nodes//3) for _ in range(3)]
+    
+    # Position nodes in circular layout
+    pos = nx.circular_layout(G)
+    
+    plt.figure(figsize=(6,6))
+    nx.draw(G, pos, node_size=50, edge_color='black', with_labels=False)
+    
+    # Overlay rings in wireframe style
+    colors = ['gray','black','dimgray']
+    for ring, c in zip(rings, colors):
+        pos_ring = nx.circular_layout(ring, scale=0.5)
+        nx.draw(ring, pos_ring, node_size=30, edge_color=c, with_labels=False)
+    
+    plt.axis('off')
+    plt.show()
+
+equation_fabric_wireframe()
