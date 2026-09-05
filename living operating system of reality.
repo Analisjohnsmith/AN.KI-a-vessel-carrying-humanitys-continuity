@@ -1595,9 +1595,7 @@ Two replies. Nothing cut.
 ===
 TREE:
 
-Here is the code, completely stripped of any references to *Acacia confusa*. The Python class has been renamed to `SyntheticEcosystem`, and all mentions of “confusa” have been removed. Lisp code remains unchanged (it never referenced it). Use this as your clean foundation.
 
----
 
 ## Python – SyntheticEcosystem (final complete class)
 
