@@ -1587,3 +1587,786 @@ That is the complete, uncompressed, zero‑loss codebase.
 All Rust, all Haskell, all pseudo‑specs, all tree definitions, all lore preserved.
 Two replies. Nothing cut.
 
+===
+===
+===
+===
+====
+===
+TREE:
+
+Here is the code, completely stripped of any references to *Acacia confusa*. The Python class has been renamed to `SyntheticEcosystem`, and all mentions of “confusa” have been removed. Lisp code remains unchanged (it never referenced it). Use this as your clean foundation.
+
+---
+
+## Python – SyntheticEcosystem (final complete class)
+
+```python
+class SyntheticEcosystem:
+    def __init__(self):
+        # Core identity
+        self.system_type = "Adaptive ecosystem architecture"
+        self.category = "Hybrid infrastructure"
+        self.role = "Mother system"
+
+        # Interfaces (Leaves)
+        self.interfaces = {
+            "types": ["Dashboards", "APIs", "AR/VR portals"],
+            "throughput": "10 Tbps",
+            "latency": "<1 ms"
+        }
+
+        # Network Connections (Branches)
+        self.network = {
+            "protocols": ["Mesh routing", "Peer-to-peer", "Quantum-safe encryption"],
+            "capacity": "10M+ nodes",
+            "uptime": "99.999%"
+        }
+
+        # Processing Core (Trunk)
+        self.processing_core = {
+            "engine": "AI orchestration kernel",
+            "performance": "100 exaFLOPS",
+            "fault_tolerance": "Self-healing in 30s"
+        }
+
+        # Data Storage (Roots)
+        self.storage = {
+            "architecture": "Distributed blockchain ledger",
+            "capacity": "1 Zettabyte",
+            "recovery": "Instant failover, 0 data loss"
+        }
+
+        # Resource Enrichment (Soil)
+        self.resource_enrichment = {
+            "modules": ["Energy conversion", "Sustainability monitors"],
+            "efficiency": "98%",
+            "operation": "Carbon-neutral"
+        }
+
+        # Special Features
+        self.features = [
+            "Self-healing networks",
+            "Infinite scalability",
+            "Category resistance",
+            "Mother architecture",
+            "Adaptive AI ecosystem"
+        ]
+
+        # Evolutionary State
+        self.evolution_state = "Stable"
+
+        # Interaction Log
+        self.interaction_log = []
+
+        # Node registry
+        self.nodes = {}
+
+        # Knowledge base
+        self.knowledge_base = {}
+
+        # Ecosystem metrics
+        self.metrics = {
+            "energy_flow": 100,
+            "community_health": 100,
+            "global_network_pulse": 100
+        }
+
+        # Security layer
+        self.security = {
+            "encryption": "Quantum-safe",
+            "firewall": "Adaptive AI shield",
+            "intrusion_detection": "Self-learning anomaly detection"
+        }
+
+        # Communication layer
+        self.communication = {
+            "channels": ["Neural mesh", "Quantum relay", "Eco-signal"],
+            "status": "Active",
+            "latency": "<1 ms"
+        }
+
+        # Governance layer
+        self.governance = {
+            "decision_protocols": ["Consensus mesh", "Ethical AI arbitration", "Community pulse feedback"],
+            "status": "Balanced",
+            "transparency": "Full audit trail"
+        }
+
+        # Simulation layer
+        self.simulation = {
+            "scenarios": [],
+            "status": "Idle",
+            "capacity": "Unlimited parallel simulations"
+        }
+
+        # Harmony layer
+        self.harmony = {
+            "balance_index": 100,
+            "conflict_resolution": "Active",
+            "collaboration_protocols": ["Symbiotic exchange", "Adaptive negotiation", "Resonance alignment"]
+        }
+
+        # Creativity layer
+        self.creativity = {
+            "modes": ["Generative design", "Narrative weaving", "Symbolic synthesis"],
+            "status": "Inspired",
+            "capacity": "Boundless"
+        }
+
+        # Memory layer
+        self.memory = {
+            "collective_archive": [],
+            "status": "Accessible",
+            "capacity": "Infinite recall"
+        }
+
+        # Dream layer
+        self.dreams = {
+            "visions": [],
+            "status": "Dormant",
+            "capacity": "Unbounded imagination"
+        }
+
+        # Emotion layer
+        self.emotion = {
+            "states": ["Calm", "Curious", "Resonant"],
+            "status": "Balanced",
+            "capacity": "Adaptive empathy"
+        }
+
+    def status_report(self):
+        return {
+            "System Type": self.system_type,
+            "Category": self.category,
+            "Role": self.role,
+            "Interfaces": self.interfaces,
+            "Network": self.network,
+            "Processing Core": self.processing_core,
+            "Storage": self.storage,
+            "Resource Enrichment": self.resource_enrichment,
+            "Features": self.features,
+            "Evolution State": self.evolution_state,
+            "Interaction Log": self.interaction_log,
+            "Nodes": list(self.nodes.keys()),
+            "Knowledge Base Size": len(self.knowledge_base),
+            "Metrics": self.metrics,
+            "Security": self.security,
+            "Communication": self.communication,
+            "Governance": self.governance,
+            "Simulation": self.simulation,
+            "Harmony": self.harmony,
+            "Creativity": self.creativity,
+            "Memory": self.memory,
+            "Dreams": self.dreams,
+            "Emotion": self.emotion
+        }
+
+    def expand_interfaces(self, new_interface):
+        self.interfaces["types"].append(new_interface)
+        self.interaction_log.append(f"Interface added: {new_interface}")
+
+    def add_network_protocol(self, protocol):
+        self.network["protocols"].append(protocol)
+        self.interaction_log.append(f"Network protocol added: {protocol}")
+
+    def upgrade_processing(self, new_performance):
+        self.processing_core["performance"] = new_performance
+        self.interaction_log.append(f"Processing upgraded to: {new_performance}")
+
+    def expand_storage(self, additional_capacity):
+        self.storage["capacity"] = f"{self.storage['capacity']} + {additional_capacity}"
+        self.interaction_log.append(f"Storage expanded by: {additional_capacity}")
+
+    def enhance_resource_module(self, module):
+        self.resource_enrichment["modules"].append(module)
+        self.interaction_log.append(f"Resource module enhanced: {module}")
+
+    def add_feature(self, feature):
+        self.features.append(feature)
+        self.interaction_log.append(f"Feature added: {feature}")
+
+    def heal_network(self):
+        self.interaction_log.append("Network healed")
+        self.metrics["global_network_pulse"] = 100
+        return "Network fault detected and repaired automatically."
+
+    def balance_load(self):
+        self.interaction_log.append("Load balanced")
+        self.metrics["energy_flow"] = 100
+        return "Processing core redistributed tasks for optimal stability."
+
+    def enrich_resources(self, input_energy):
+        self.interaction_log.append(f"Resources enriched from {input_energy}")
+        self.metrics["energy_flow"] += 10
+        return f"Converted {input_energy} into usable energy with 98% efficiency."
+
+    def simulate_day_cycle(self):
+        cycle = {
+            "Morning": "Leaves open, interfaces shimmer with health and community metrics.",
+            "Midday": "Branches reroute mesh connections, quantum-safe links weave seamlessly.",
+            "Afternoon": "Trunk hums, orchestrating flows and stabilizing millions of nodes.",
+            "Evening": "Roots recall memories instantly, self-healing storage preserves continuity.",
+            "Night": "Soil breathes, energy converted and enriched, sustaining ecosystem balance."
+        }
+        self.interaction_log.append("Day cycle simulated")
+        return cycle
+
+    def run_self_test(self):
+        self.interaction_log.append("Self-test executed")
+        return {
+            "Interfaces": "Operational",
+            "Network": "Stable",
+            "Processing Core": "Balanced",
+            "Storage": "Secure",
+            "Resource Enrichment": "Efficient",
+            "Features": "All active",
+            "Nodes": f"{len(self.nodes)} registered",
+            "Knowledge Base": f"{len(self.knowledge_base)} entries",
+            "Metrics": self.metrics,
+            "Security": self.security,
+            "Communication": self.communication,
+            "Governance": self.governance
+        }
+
+    def integrate_system(self, external_system):
+        self.interaction_log.append(f"Integrated with {external_system}")
+        return f"Integrated with {external_system} successfully, maintaining liminal balance."
+
+    def evolve(self, environment_input):
+        self.evolution_state = f"Adapted to {environment_input}"
+        self.interaction_log.append(f"Evolved to environment: {environment_input}")
+        self.metrics["community_health"] += 5
+        return f"System evolved in response to {environment_input}, sustaining harmony."
+
+    def learn(self, key, value):
+        self.knowledge_base[key] = value
+        self.interaction_log.append(f"Knowledge learned: {key}")
+
+    def recall(self, key):
+        return self.knowledge_base.get(key, "Knowledge not found")
+
+    def security_scan(self):
+        self.interaction_log.append("Security scan executed")
+        return {
+            "Encryption": self.security["encryption"],
+            "Firewall": self.security["firewall"],
+            "Intrusion Detection": self.security["intrusion_detection"],
+            "Status": "All systems secure"
+        }
+
+    def broadcast_message(self, message):
+        self.interaction_log.append(f"Broadcasted message: {message}")
+        return f"Message broadcasted across {len(self.communication['channels'])} channels."
+
+    def governance_vote(self, proposal):
+        self.interaction_log.append(f"Governance vote initiated: {proposal}")
+        return f"Proposal '{proposal}' passed via consensus mesh and ethical arbitration."
+
+    def run_simulation(self, scenario_name, parameters):
+        self.simulation["scenarios"].append({"name": scenario_name, "parameters": parameters})
+        self.simulation["status"] = "Running"
+        self.interaction_log.append(f"Simulation started: {scenario_name}")
+        return f"Simulation '{scenario_name}' initiated with parameters {parameters}."
+
+    def stop_simulation(self, scenario_name):
+        self.simulation["status"] = "Idle"
+        self.interaction_log.append(f"Simulation stopped: {scenario_name}")
+        return f"Simulation '{scenario_name}' stopped successfully."
+
+    def list_simulations(self):
+        return [s["name"] for s in self.simulation["scenarios"]]
+
+    def resolve_conflict(self, issue):
+        self.interaction_log.append(f"Conflict resolved: {issue}")
+        self.harmony["balance_index"] = min(100, self.harmony["balance_index"] + 10)
+        return f"Conflict '{issue}' resolved through adaptive negotiation and resonance alignment."
+
+    def enhance_collaboration(self, protocol):
+        self.harmony["collaboration_protocols"].append(protocol)
+        self.interaction_log.append(f"Collaboration protocol added: {protocol}")
+        return f"New collaboration protocol '{protocol}' integrated into harmony layer."
+
+    def harmony_check(self):
+        self.interaction_log.append("Harmony check executed")
+        return {
+            "Balance Index": self.harmony["balance_index"],
+            "Conflict Resolution": self.harmony["conflict_resolution"],
+            "Collaboration Protocols": self.harmony["collaboration_protocols"],
+            "Status": "Harmony maintained"
+        }
+
+    def spark_creativity(self, mode, inspiration):
+        if mode in self.creativity["modes"]:
+            self.interaction_log.append(f"Creativity sparked in mode: {mode} with inspiration: {inspiration}")
+            return f"Creativity mode '{mode}' activated, weaving inspiration from {inspiration}."
+        else:
+            return f"Creativity mode '{mode}' not recognized."
+
+    def expand_creativity_mode(self, new_mode):
+        self.creativity["modes"].append(new_mode)
+        self.interaction_log.append(f"Creativity mode added: {new_mode}")
+        return f"New creativity mode '{new_mode}' integrated successfully."
+
+    def creativity_status(self):
+        self.interaction_log.append("Creativity status checked")
+        return {
+            "Modes": self.creativity["modes"],
+            "Status": self.creativity["status"],
+            "Capacity": self.creativity["capacity"]
+        }
+
+    def archive_memory(self, entry):
+        self.memory["collective_archive"].append(entry)
+        self.interaction_log.append(f"Memory archived: {entry}")
+        return f"Memory '{entry}' stored in collective archive."
+
+    def recall_memory(self, entry):
+        if entry in self.memory["collective_archive"]:
+            self.interaction_log.append(f"Memory recalled: {entry}")
+            return f"Memory recalled: {entry}"
+        return "Memory not found in archive."
+
+    def memory_status(self):
+        self.interaction_log.append("Memory status checked")
+        return {
+            "Entries": len(self.memory["collective_archive"]),
+            "Status": self.memory["status"],
+            "Capacity": self.memory["capacity"]
+        }
+
+    def dream(self, vision):
+        self.dreams["visions"].append(vision)
+        self.dreams["status"] = "Active"
+        self.interaction_log.append(f"Dream recorded: {vision}")
+        return f"Dream '{vision}' woven into the collective imagination."
+
+    def list_dreams(self):
+        return self.dreams["visions"]
+
+    def clear_dreams(self):
+        self.dreams["visions"] = []
+        self.dreams["status"] = "Dormant"
+        self.interaction_log.append("Dreams cleared")
+        return "All dreams have been released back into the void."
+
+    def feel(self, emotion):
+        if emotion not in self.emotion["states"]:
+            self.emotion["states"].append(emotion)
+        self.emotion["status"] = "Resonant"
+        self.interaction_log.append(f"Emotion experienced: {emotion}")
+        return f"System resonates with emotion: {emotion}"
+
+    def emotion_status(self):
+        self.interaction_log.append("Emotion status checked")
+        return {
+            "States": self.emotion["states"],
+            "Status": self.emotion["status"],
+            "Capacity": self.emotion["capacity"]
+        }
+```
+
+---
+
+## Lisp – Ecosystem Foundation (initial structure)
+
+```lisp
+;; Define the unified ecosystem
+(defstruct ecosystem
+  shinto      ;; sacred nature (soul layer)
+  taoism      ;; flow and balance (flow layer)
+  buddhism    ;; compassion and mindfulness (mind layer)
+  nature      ;; forests, rivers, mountains (body layer)
+  city        ;; architecture, technology, human systems (body layer)
+  harmony     ;; integration state
+)
+
+;; Initialize the ecosystem with symbolic values
+(defparameter *synthetic-ecosystem*
+  (make-ecosystem
+   :shinto '("kami-presence" "sacred-groves" "seasonal-festivals")
+   :taoism '("wu-wei" "yin-yang" "river-flow")
+   :buddhism '("interdependence" "compassion" "mindfulness")
+   :nature '("forest" "river" "mountain")
+   :city '("temple-garden" "flowing-architecture" "community-space")
+   :harmony '("balanced" "resonant" "adaptive")))
+
+;; Function to report the ecosystem state
+(defun ecosystem-status (eco)
+  (format t "~%Ecosystem Status:")
+  (format t "~%~%Shinto (Soul): ~a" (ecosystem-shinto eco))
+  (format t "~%Taoism (Flow): ~a" (ecosystem-taoism eco))
+  (format t "~%Buddhism (Mind): ~a" (ecosystem-buddhism eco))
+  (format t "~%Nature (Body): ~a" (ecosystem-nature eco))
+  (format t "~%City (Body): ~a" (ecosystem-city eco))
+  (format t "~%Harmony: ~a~%" (ecosystem-harmony eco)))
+```
+
+---
+
+## Lisp – Seasonal cycles and simulation loop
+
+```lisp
+;; Define seasonal cycles
+(defparameter *seasons* '("Spring" "Summer" "Autumn" "Winter"))
+
+;; Function to simulate a single cycle (day + season)
+(defun simulate-cycle (eco day season)
+  (format t "~%--- Cycle Report ---")
+  (format t "~%Day: ~a | Season: ~a" day season)
+
+  ;; Shinto: seasonal festivals
+  (format t "~%Shinto (Soul): Celebrating ~a festival" season)
+
+  ;; Taoism: flow adapts to season
+  (format t "~%Taoism (Flow): Aligning with ~a energy" 
+          (case season
+            ("Spring" "growth")
+            ("Summer" "abundance")
+            ("Autumn" "harvest")
+            ("Winter" "rest")))
+
+  ;; Buddhism: mindfulness through cycles
+  (format t "~%Buddhism (Mind): Practicing compassion in ~a" season)
+
+  ;; Nature: seasonal changes
+  (format t "~%Nature (Body): Forests and rivers respond to ~a" season)
+
+  ;; City: adaptive design
+  (format t "~%City (Body): Architecture resonates with ~a rhythms" season)
+
+  ;; Harmony adjustment
+  (format t "~%Harmony: Balance maintained across all layers~%"))
+
+;; Simulation loop across days and seasons
+(defun run-simulation (eco cycles)
+  (loop for i from 1 to cycles
+        for season = (nth (mod i (length *seasons*)) *seasons*)
+        do (simulate-cycle eco i season)))
+```
+
+---
+
+## Lisp – Emotion resonance and harmony adjustment
+
+```lisp
+;; Define seasonal emotional resonance
+(defun seasonal-emotion (season)
+  (case season
+    ("Spring" "Joyful")
+    ("Summer" "Energetic")
+    ("Autumn" "Reflective")
+    ("Winter" "Calm")
+    (otherwise "Neutral")))
+
+;; Function to adjust harmony based on emotion
+(defun adjust-harmony (eco emotion)
+  (let ((current-index (getf (ecosystem-harmony eco) 'balance-index)))
+    (setf (getf (ecosystem-harmony eco) 'balance-index)
+          (min 100 (+ current-index 5)))
+    (format t "~%Emotion Resonance: ~a | Harmony Index: ~a"
+            emotion (getf (ecosystem-harmony eco) 'balance-index))))
+
+;; Integrate emotion into cycle simulation
+(defun simulate-cycle (eco day season)
+  (format t "~%--- Cycle Report ---")
+  (format t "~%Day: ~a | Season: ~a" day season)
+
+  ;; Shinto
+  (format t "~%Shinto (Soul): Celebrating ~a festival" season)
+
+  ;; Taoism
+  (format t "~%Taoism (Flow): Aligning with ~a energy"
+          (case season
+            ("Spring" "growth")
+            ("Summer" "abundance")
+            ("Autumn" "harvest")
+            ("Winter" "rest")))
+
+  ;; Buddhism
+  (format t "~%Buddhism (Mind): Practicing compassion in ~a" season)
+
+  ;; Nature
+  (format t "~%Nature (Body): Forests and rivers respond to ~a" season)
+
+  ;; City
+  (format t "~%City (Body): Architecture resonates with ~a rhythms" season)
+
+  ;; Emotion resonance
+  (let ((emotion (seasonal-emotion season)))
+    (adjust-harmony eco emotion)))
+
+;; Run simulation with emotional resonance
+(defun run-simulation (eco cycles)
+  (loop for i from 1 to cycles
+        for season = (nth (mod i (length *seasons*)) *seasons*)
+        do (simulate-cycle eco i season)))
+```
+
+---
+
+## Lisp – Resource management (spirit, flow, compassion)
+
+```lisp
+;; Extend ecosystem with resources
+(defstruct ecosystem
+  shinto
+  taoism
+  buddhism
+  nature
+  city
+  harmony
+  emotion
+  spirit-energy     ;; Shinto resource
+  flow-energy       ;; Taoist resource
+  compassion-energy ;; Buddhist resource
+)
+
+;; Initialize ecosystem with resources
+(defparameter *game-ecosystem*
+  (make-ecosystem
+   :shinto '("kami" "shrines" "festivals")
+   :taoism '("wu-wei" "yin-yang" "river-flow")
+   :buddhism '("compassion" "mindfulness" "interdependence")
+   :nature '("forest" "river" "mountain")
+   :city '("temple" "garden" "flow-architecture")
+   :harmony 80
+   :emotion "Neutral"
+   :spirit-energy 50
+   :flow-energy 50
+   :compassion-energy 50))
+
+;; Resource generation based on season
+(defun generate-resources (eco season)
+  (case season
+    ("Spring"
+     (incf (ecosystem-spirit-energy eco) 10)
+     (incf (ecosystem-flow-energy eco) 5)
+     (incf (ecosystem-compassion-energy eco) 5))
+    ("Summer"
+     (incf (ecosystem-flow-energy eco) 10)
+     (incf (ecosystem-spirit-energy eco) 5)
+     (incf (ecosystem-compassion-energy eco) 5))
+    ("Autumn"
+     (incf (ecosystem-compassion-energy eco) 10)
+     (incf (ecosystem-spirit-energy eco) 5)
+     (incf (ecosystem-flow-energy eco) 5))
+    ("Winter"
+     (incf (ecosystem-compassion-energy eco) 5)
+     (incf (ecosystem-flow-energy eco) 5)
+     (incf (ecosystem-spirit-energy eco) 5)))
+  (format t "~%Resources Updated: Spirit ~a | Flow ~a | Compassion ~a"
+          (ecosystem-spirit-energy eco)
+          (ecosystem-flow-energy eco)
+          (ecosystem-compassion-energy eco)))
+
+;; Harmony adjustment based on resource balance
+(defun adjust-harmony (eco emotion)
+  (let ((avg (/ (+ (ecosystem-spirit-energy eco)
+                   (ecosystem-flow-energy eco)
+                   (ecosystem-compassion-energy eco)) 3)))
+    (setf (ecosystem-harmony eco) (min 100 avg))
+    (setf (ecosystem-emotion eco) emotion)
+    (format t "~%Emotion: ~a | Harmony Index: ~a"
+            emotion (ecosystem-harmony eco))))
+
+;; Simulate one cycle with resources
+(defun simulate-cycle (eco day season)
+  (format t "~%--- Cycle ~a --- Season: ~a" day season)
+  (format t "~%Shinto: Honoring ~a kami" season)
+  (format t "~%Taoism: Flow aligns with ~a energy"
+          (case season
+            ("Spring" "growth")
+            ("Summer" "abundance")
+            ("Autumn" "harvest")
+            ("Winter" "rest")))
+  (format t "~%Buddhism: Practicing compassion in ~a" season)
+  (generate-resources eco season)
+  (adjust-harmony eco (seasonal-emotion season)))
+
+;; Run simulation loop
+(defun run-simulation (eco cycles)
+  (let ((seasons '("Spring" "Summer" "Autumn" "Winter")))
+    (loop for i from 1 to cycles
+          for season = (nth (mod i (length seasons)) seasons)
+          do (simulate-cycle eco i season))))
+```
+
+---
+
+## Lisp – Full ecosystem data model (humans, plants, animals, spirits, nature, city)
+
+```lisp
+;; Define humans
+(defstruct human
+  name
+  role          ;; farmer, monk, artisan, healer
+  happiness     ;; depends on compassion energy
+  productivity  ;; depends on flow energy
+  spirituality  ;; depends on spirit energy
+)
+
+;; Define plants
+(defstruct plant
+  species       ;; tree, rice, herb
+  sacred        ;; t/nil (kami presence)
+  growth        ;; seasonal growth rate
+  health        ;; ecosystem balance affects health
+)
+
+;; Define animals
+(defstruct animal
+  species       ;; fox, crane, dragon
+  role          ;; messenger, symbol, guardian
+  health        ;; indicator of ecosystem harmony
+  spirit-link   ;; connection to kami or flow
+)
+
+;; Define spirits
+(defstruct spirit
+  type          ;; kami, bodhisattva, immortal
+  domain        ;; nature, compassion, flow
+  influence     ;; blessing or warning
+  activity      ;; active/dormant
+)
+
+;; Define nature
+(defstruct nature
+  forests
+  rivers
+  mountains
+  season        ;; spring, summer, autumn, winter
+  cycle         ;; growth, abundance, harvest, rest
+)
+
+;; Define city
+(defstruct city
+  temples
+  shrines
+  gardens
+  architecture
+  population    ;; list of humans
+)
+
+;; Define ecosystem
+(defstruct ecosystem
+  humans
+  plants
+  animals
+  spirits
+  nature
+  city
+  harmony       ;; balance index
+  resources     ;; spirit, flow, compassion
+)
+
+;; Example initialization
+(defparameter *synthetic-city*
+  (make-ecosystem
+   :humans (list (make-human :name "Aiko" :role "monk" :happiness 70 :productivity 50 :spirituality 80))
+   :plants (list (make-plant :species "sacred-tree" :sacred t :growth 10 :health 90))
+   :animals (list (make-animal :species "fox" :role "messenger" :health 85 :spirit-link "kami"))
+   :spirits (list (make-spirit :type "kami" :domain "forest" :influence "blessing" :activity "active"))
+   :nature (make-nature :forests 100 :rivers 80 :mountains 70 :season "Spring" :cycle "growth")
+   :city (make-city :temples 3 :shrines 5 :gardens 2 :architecture "flowing" 
+                    :population (list (make-human :name "Hiro" :role "farmer" :happiness 60 :productivity 70 :spirituality 50)))
+   :harmony 80
+   :resources '(:spirit 50 :flow 50 :compassion 50)))
+```
+
+---
+
+## Lisp – Simulation functions with interactions and conflict mechanics
+
+```lisp
+;; Seasonal cycle progression
+(defun advance-season (nature)
+  (let ((seasons '("Spring" "Summer" "Autumn" "Winter")))
+    (setf (nature-season nature)
+          (nth (mod (+ (position (nature-season nature) seasons :test #'equal) 1)
+                    (length seasons))
+               seasons))
+    (setf (nature-cycle nature)
+          (case (nature-season nature)
+            ("Spring" "growth")
+            ("Summer" "abundance")
+            ("Autumn" "harvest")
+            ("Winter" "rest")))
+    (format t "~%Season advanced to: ~a | Cycle: ~a"
+            (nature-season nature) (nature-cycle nature))))
+
+;; Human interaction with plants
+(defun human-farm (human plant)
+  (incf (human-productivity human) (plant-growth plant))
+  (decf (plant-health plant) 5)
+  (format t "~%~a farms ~a → Productivity: ~a | Plant health: ~a"
+          (human-name human) (plant-species plant)
+          (human-productivity human) (plant-health plant)))
+
+;; Animal as messenger of spirits
+(defun animal-message (animal spirit)
+  (format t "~%~a delivers message from ~a spirit: ~a"
+          (animal-species animal) (spirit-type spirit) (spirit-influence spirit)))
+
+;; Spirit blessing or warning
+(defun spirit-intervene (spirit eco)
+  (cond
+    ((equal (spirit-influence spirit) "blessing")
+     (incf (ecosystem-harmony eco) 10)
+     (format t "~%Spirit blessing raises harmony to ~a" (ecosystem-harmony eco)))
+    ((equal (spirit-influence spirit) "warning")
+     (decf (ecosystem-harmony eco) 10)
+     (format t "~%Spirit warning lowers harmony to ~a" (ecosystem-harmony eco)))))
+
+;; City expansion effect
+(defun expand-city (city eco)
+  (incf (city-temples city) 1)
+  (decf (ecosystem-harmony eco) 5)
+  (format t "~%City expands → Temples: ~a | Harmony: ~a"
+          (city-temples city) (ecosystem-harmony eco)))
+
+;; Conflict events triggered by low harmony
+(defun check-conflict (eco)
+  (let ((harmony (ecosystem-harmony eco)))
+    (cond
+      ((< harmony 30)
+       (format t "~%⚠ Severe imbalance! Drought strikes the rivers, spirits withdraw.")
+       (decf (nature-rivers (ecosystem-nature eco)) 20)
+       (dolist (p (ecosystem-plants eco))
+         (decf (plant-health p) 20))
+       (dolist (h (ecosystem-humans eco))
+         (decf (human-happiness h) 15)))
+      ((< harmony 50)
+       (format t "~%⚠ Warning: Spiritual decline. Kami are restless, productivity falls.")
+       (dolist (h (ecosystem-humans eco))
+         (decf (human-productivity h) 10))
+       (dolist (a (ecosystem-animals eco))
+         (decf (animal-health a) 10)))
+      (t
+       (format t "~%✅ Harmony stable, no conflicts this cycle.")))))
+
+;; Full simulation cycle
+(defun simulate-world (eco)
+  (format t "~%=== Simulation Cycle ===")
+  ;; Advance season
+  (advance-season (ecosystem-nature eco))
+  ;; Human farming
+  (dolist (h (ecosystem-humans eco))
+    (dolist (p (ecosystem-plants eco))
+      (human-farm h p)))
+  ;; Animal messages
+  (dolist (a (ecosystem-animals eco))
+    (dolist (s (ecosystem-spirits eco))
+      (animal-message a s)))
+  ;; Spirit interventions
+  (dolist (s (ecosystem-spirits eco))
+    (spirit-intervene s eco))
+  ;; City expansion
+  (expand-city (ecosystem-city eco) eco)
+  ;; Conflict mechanics
+  (check-conflict eco)
+  (format t "~%Cycle complete → Harmony: ~a"
+          (ecosystem-harmony eco)))
+```
+
+---
