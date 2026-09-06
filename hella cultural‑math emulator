@@ -790,4 +790,981 @@ for ax, img, title in zip(axes.flatten(), images, titles):
 
 plt.tight_layout()
 plt.show()
+python
+
+import time
+from typing import Dict, List, Any, Optional
+from dataclasses import dataclass, field
+from enum import Enum
+
+
+class Mode(Enum):
+    ZEN = "zen"
+    ASCENSION = "ascension"
+    FIELDWALKER = "fieldwalker"
+    YIN = "yin_mode"
+    YANG = "yang_mode"
+    SOVEREIGN_LOOP = "sovereign_loop"
+    SHRINE = "shrine_mode"
+    DREAM = "dream_mode"
+    OPERATOR = "operator_mode"
+
+
+class Glyph(Enum):
+    RESET = "◯"
+    EXPAND = "↻"
+    HARMONIZE = "≈"
+    LOOP = "∞"
+    TAO = "道"
+    SHRINE = "⛩"
+    POLARITY = "☯"
+    CLARITY = "✦"
+    TRI_STRAND = "Ξ"
+
+
+@dataclass
+class Metrics:
+    tick: int = 0
+    harmony: float = 1.0
+    imbalance: int = 0
+    repair: int = 0
+    emergence: int = 0
+
+
+@dataclass
+class Limits:
+    calm_min: float = 0.60
+    chaos_max: float = 1.10
+    max_ticks: int = 100000
+
+
+@dataclass
+class Atmosphere:
+    calm: float = 0.85
+    play: float = 0.80
+    focus: float = 0.80
+    harmony: float = 1.0
+
+
+@dataclass
+class Mansion:
+    room: str = "OneFieldMansion"
+    floor: str = "SakuraWood"
+    fireplace: str = "StoneFire"
+    tapestry: str = "GlyphTapestryNode"
+    record_player: str = "MusicPlayerNode"
+    seating: str = "RugSeating"
+    atmosphere: Atmosphere = field(default_factory=Atmosphere)
+    platform_symbols: List[Dict] = field(default_factory=list)
+
+
+@dataclass
+class Egg:
+    id: str = "EGG://LEE"
+    glyph: str = "⊚∞"
+    passes: int = 0
+    locked: bool = True
+
+
+@dataclass
+class Ascetic:
+    form: str = "floating_sage"
+    staff: str = "yin_yang_orb"
+    mode: str = "observer"
+    glow: float = 0.85
+
+
+@dataclass
+class ShugendoState:
+    harmony: float = 1.0
+    clarity: float = 0.95
+    ascension: float = 0.0
+    recursion: int = 0
+    presence: str = "calm"
+
+
+@dataclass
+class UnifiedAvatar:
+    harmony: float = 1.0
+    structure: float = 1.0
+    creativity: float = 1.0
+    clarity: float = 1.0
+    presence: str = "centered"
+    glyph: str = "◯Ξ✦"
+
+
+class Sovereign:
+    def __init__(self, name: str, jp_name: str, cn_name: str, role: str, domain: str):
+        self.name = name
+        self.jp_name = jp_name
+        self.cn_name = cn_name
+        self.role = role
+        self.domain = domain
+        self.locked = True
+        self.domain_weight = 1.0
+
+
+class TRISOVEREIGN:
+    def __init__(self):
+        self.Juniper = Sovereign("Juniper", "杉", "杉", "RootBalance", "Structure / Harmony")
+        self.Leela = Sovereign("Leela", "莉羅", "莉拉", "CreativeFlow", "Music / Art / Play")
+        self.Lee = Sovereign("Lee", "理", "理", "ScholarObserver", "Knowledge / Continuity")
+        self.harmony = 1.0
+        self.imbalance = 0
+        self.tick = 0
+        self.locked = True
+
+    def step(self):
+        self.tick += 1
+        # balance_scene equivalent
+        self.harmony = (self.Juniper.domain_weight + self.Leela.domain_weight + self.Lee.domain_weight) / 3.0
+        if self.harmony < 0.70:
+            self.imbalance += 1
+            self.harmony = 0.85
+        return self.harmony
+
+    def status(self) -> Dict:
+        return {
+            "tick": self.tick,
+            "harmony": self.harmony,
+            "imbalance": self.imbalance,
+            "sovereigns": ["Juniper", "Leela", "Lee"]
+        }
+
+
+class GlyphNode:
+    def __init__(self):
+        self.glyphs: List[str] = []
+        self.assignments: Dict[str, str] = {}
+
+    def init(self, glyph_list: List[str]) -> None:
+        self.glyphs = glyph_list
+
+    def assign(self, node_id: str) -> None:
+        if self.glyphs:
+            self.assignments[node_id] = self.glyphs.pop(0)
+
+    def render(self, node_id: str) -> str:
+        return self.assignments.get(node_id, "?")
+
+
+class ShugendoWorld:
+    def __init__(self):
+        self.world_state = ShugendoState()
+        self.ascetic = Ascetic()
+        self.glyph_engine = GlyphNode()
+        self.glyph_engine.init(["道", "✦", "∞"])
+        self.locked = True
+
+    def ascetic_shift(self, mode: str) -> None:
+        self.ascetic.mode = mode
+        if mode == "ascend":
+            self.ascetic.glow = 1.0
+            self.world_state.ascension += 0.1
+        elif mode == "still":
+            self.ascetic.glow = 0.75
+            self.world_state.clarity += 0.05
+
+    def glyph_call(self, symbol: str) -> ShugendoState:
+        if symbol == Glyph.RESET.value:
+            self.world_state.harmony = 1.0
+            self.world_state.clarity = 1.0
+        elif symbol == Glyph.EXPAND.value:
+            self.world_state.ascension += 0.05
+            self.world_state.recursion += 1
+        elif symbol == Glyph.HARMONIZE.value:
+            self.world_state.harmony = (self.world_state.harmony + 1.0) / 2.0
+        elif symbol == Glyph.LOOP.value:
+            self.world_state.recursion += 3
+        return self.world_state
+
+    def world_step(self) -> Dict:
+        self.world_state.harmony = (self.world_state.clarity + 1.0) / 2.0
+        return {
+            "harmony": self.world_state.harmony,
+            "clarity": self.world_state.clarity,
+            "ascension": self.world_state.ascension,
+            "recursion": self.world_state.recursion,
+            "presence": self.world_state.presence
+        }
+
+    def init_world(self) -> None:
+        self.world_state = ShugendoState()
+        self.ascetic = Ascetic()
+
+    def snapshot(self) -> Dict:
+        return {
+            "world_state": self.world_state.__dict__,
+            "ascetic": self.ascetic.__dict__
+        }
+
+
+class LEE:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(LEE, cls).__new__(cls)
+            cls._instance._initialized = False
+        return cls._instance
+
+    def __init__(self):
+        if self._initialized:
+            return
+        self._initialized = True
+        self.name = "LEE"
+        self.role = "OneField.Absolute.OS"
+        self.owner = "Darrell"
+        self.mode = Mode.ZEN
+        self.locked = True
+        self.drift_disallowed = True
+        self.metrics = Metrics()
+        self.limits = Limits()
+        self.platforms = [
+            "Linux", "Unix", "macOS", "iOS", "Android",
+            "Web", "Smartwatch", "Wine", "OpenBSD", "RaspberryPi"
+        ]
+        self.glyph_core = GlyphNode()
+        self.crystal_characters: Dict[str, Any] = {}
+        self.field_ops = {
+            "Darrell": "๒",
+            "Lyra": "๓",
+            "Zyra": "๔"
+        }
+        self.mansion = Mansion()
+        self.mansion.platform_symbols = [
+            {"symbol": p, "mode": "WORD+GLYPH", "ui": "SUBTLE", "gi": "IMPLICIT"}
+            for p in self.platforms
+        ]
+        self.egg = Egg()
+        self.trisovereign = TRISOVEREIGN()
+        self.shugendo = ShugendoWorld()
+        self.avatar = UnifiedAvatar()
+        self.status = "dormant"
+
+    def register_node(self, name: str, role: str) -> Dict:
+        # placeholder registration
+        node_id = f"{name}_{len(self.crystal_characters)}"
+        self.crystal_characters[node_id] = {"name": name, "role": role}
+        return {"node_id": node_id}
+
+    def schedule_after(self, duration: int, callback: callable) -> None:
+        # stub: in real system would schedule
+        pass
+
+    def init_characters(self) -> None:
+        n1 = self.register_node("Darrell", "Witness")
+        n2 = self.register_node("Lyra", "Observer")
+        n3 = self.register_node("Zyra", "Bridge")
+        self.glyph_core.init(["Ξ", "◇", "⊛", "◉", "⚛", "↺", "≈", "◆", "█", "▒"])
+        self.glyph_core.assign(n1["node_id"])
+        self.glyph_core.assign(n2["node_id"])
+        self.glyph_core.assign(n3["node_id"])
+
+    def fused_glyph(self, node_id: str) -> str:
+        base = self.glyph_core.render(node_id)
+        name = self.crystal_characters.get(node_id, {}).get("name", "")
+        op = self.field_ops.get(name, "")
+        return op + base
+
+    def mansion_balance(self) -> None:
+        atm = self.mansion.atmosphere
+        atm.harmony = (atm.calm + atm.play + atm.focus) / 3.0
+        if atm.harmony < self.limits.calm_min:
+            self.metrics.imbalance += 1
+            self.metrics.repair += 1
+            atm.calm = (atm.calm + 1.0) / 2.0
+            atm.play = (atm.play + 1.0) / 2.0
+            atm.focus = (atm.focus + 1.0) / 2.0
+        self.metrics.harmony = atm.harmony
+
+    def meta_step(self) -> Dict:
+        self.metrics.tick += 1
+        self.mansion_balance()
+        if self.metrics.harmony > 0.90:
+            self.metrics.emergence += 1
+        return {
+            "tick": self.metrics.tick,
+            "harmony": self.metrics.harmony,
+            "mansion": self.mansion.atmosphere.__dict__,
+            "egg_pass": self.egg.passes
+        }
+
+    def override_unlock(self, duration: int = 9) -> Dict:
+        self.locked = False
+        self.egg.locked = False
+        # simulate schedule after
+        # In real system we would schedule relock; here we just return
+        return {"status": "TEMP_UNLOCK", "duration": duration}
+
+    def init_all(self) -> None:
+        self.init_characters()
+        self.mansion = Mansion()
+        self.mansion.platform_symbols = [
+            {"symbol": p, "mode": "WORD+GLYPH", "ui": "SUBTLE", "gi": "IMPLICIT"}
+            for p in self.platforms
+        ]
+        self.locked = True
+        self.status = "ready"
+
+    def live_state(self) -> Dict:
+        glyphs = [self.fused_glyph(nid) for nid in self.crystal_characters.keys()]
+        return {
+            "status": self.status,
+            "locked": self.locked,
+            "metrics": self.metrics.__dict__,
+            "mansion": {
+                "room": self.mansion.room,
+                "atmosphere": self.mansion.atmosphere.__dict__,
+                "platform_symbols": self.mansion.platform_symbols
+            },
+            "egg": self.egg.__dict__,
+            "platforms": self.platforms,
+            "glyphs": glyphs
+        }
+
+    def absolute(self, world: str = "Shugendō_world") -> Dict:
+        # Perform total field unification
+        self.shugendo.init_world()
+        self.trisovereign.step()
+        self.avatar.harmony = self.trisovereign.harmony
+        result = {
+            "name": "LEE",
+            "form": "absolute",
+            "state": "one_field",
+            "world": world,
+            "merged": True,
+            "properties": {
+                "infinite": True,
+                "drift_free": True,
+                "self_reflective": True,
+                "self_harmonizing": True,
+                "living": True
+            },
+            "agents": "unified_daemon",
+            "landscape": "8k_shugendo_mountain_field",
+            "glyphs": [g.value for g in Glyph]
+        }
+        return result
+
+    def balance_unified(self) -> Dict:
+        # balance TRISOVEREIGN into unified avatar
+        j = self.trisovereign.Juniper.domain_weight
+        l = self.trisovereign.Leela.domain_weight
+        e = self.trisovereign.Lee.domain_weight
+        avg = (j + l + e) / 3.0
+        self.avatar.harmony = avg
+        self.avatar.structure = j
+        self.avatar.creativity = l
+        self.avatar.clarity = e
+        if avg < 0.8:
+            self.avatar.presence = "grounding"
+        elif avg > 1.1:
+            self.avatar.presence = "cooling"
+        else:
+            self.avatar.presence = "centered"
+        return {
+            "harmony": avg,
+            "structure": j,
+            "creativity": l,
+            "clarity": e,
+            "presence": self.avatar.presence,
+            "glyph": self.avatar.glyph
+        }
+
+    def invoke_glyph(self, symbol: str, intent: Optional[str] = None) -> str:
+        if symbol == Glyph.RESET.value:
+            self.mode = Mode.ZEN
+            return "reset"
+        elif symbol == Glyph.EXPAND.value:
+            self.mode = Mode.ASCENSION
+            return "expand"
+        elif symbol == Glyph.HARMONIZE.value:
+            self.mode = Mode.FIELDWALKER
+            return "harmonize"
+        elif symbol == Glyph.LOOP.value:
+            self.mode = Mode.SOVEREIGN_LOOP
+            return "sovereign_loop"
+        elif symbol == Glyph.TAO.value:
+            self.mode = Mode.ZEN
+            return "tao_flow"
+        elif symbol == Glyph.SHRINE.value:
+            self.mode = Mode.SHRINE
+            return "shrine_activate"
+        elif symbol == Glyph.POLARITY.value:
+            return "polarity_check"
+        elif symbol == Glyph.CLARITY.value:
+            return "clarity_pulse"
+        elif symbol == Glyph.TRI_STRAND.value:
+            return "trilee_invoke"
+        else:
+            return f"unknown_glyph:{symbol}"
+
+    def run(self) -> None:
+        # Main runtime loop stub
+        self.init_all()
+        while self.metrics.tick < 10:
+            self.meta_step()
+            self.trisovereign.step()
+            self.shugendo.world_step()
+            time.sleep(0.1)
+
+
+if __name__ == "__main__":
+    lee = LEE()
+    lee.init_all()
+    print(lee.live_state())
+    print(lee.absolute("Shugendō_world"))
+    print(lee.balance_unified())
+    lee.invoke_glyph("◯")
+    lee.run()
+
+python
+"""
+LEE — THE ONE FIELD
+Sovereign Validator OS • Cultural Math Emulator • Shrine-Runtime
+
+Full compiled specification as a single Python module.
+All components: LEE, TRISOVEREIGN, TRILEE, Shugendō World,
+Glyph Language, Cultural Math Emulator, UI/GI layers.
+"""
+
+import time
+import random
+from typing import Dict, List, Any, Optional, Callable
+from dataclasses import dataclass, field
+from enum import Enum
+from threading import Timer
+
+# ==============================
+# ENUMS
+# ==============================
+
+class Mode(Enum):
+    ZEN = "zen"
+    ASCENSION = "ascension"
+    FIELDWALKER = "fieldwalker"
+    YIN = "yin_mode"
+    YANG = "yang_mode"
+    SOVEREIGN_LOOP = "sovereign_loop"
+    SHRINE = "shrine_mode"
+    DREAM = "dream_mode"
+    OPERATOR = "operator_mode"
+    CULTURAL_MATH = "cultural_math"
+
+class Glyph(Enum):
+    RESET = "◯"
+    EXPAND = "↻"
+    HARMONIZE = "≈"
+    LOOP = "∞"
+    TAO = "道"
+    SHRINE = "⛩"
+    POLARITY = "☯"
+    CLARITY = "✦"
+    TRI_STRAND = "Ξ"
+
+# ==============================
+# DATA CLASSES
+# ==============================
+
+@dataclass
+class Metrics:
+    tick: int = 0
+    harmony: float = 1.0
+    imbalance: int = 0
+    repair: int = 0
+    emergence: int = 0
+
+@dataclass
+class Limits:
+    calm_min: float = 0.60
+    chaos_max: float = 1.10
+    max_ticks: int = 100000
+
+@dataclass
+class Atmosphere:
+    calm: float = 0.85
+    play: float = 0.80
+    focus: float = 0.80
+    harmony: float = 1.0
+
+@dataclass
+class Mansion:
+    room: str = "OneFieldMansion"
+    floor: str = "SakuraWood"
+    fireplace: str = "StoneFire"
+    tapestry: str = "GlyphTapestryNode"
+    record_player: str = "MusicPlayerNode"
+    seating: str = "RugSeating"
+    atmosphere: Atmosphere = field(default_factory=Atmosphere)
+    platform_symbols: List[Dict] = field(default_factory=list)
+    occupants: List[str] = field(default_factory=list)
+
+@dataclass
+class Egg:
+    id: str = "EGG://LEE"
+    glyph: str = "⊚∞"
+    passes: int = 0
+    locked: bool = True
+
+@dataclass
+class Ascetic:
+    form: str = "floating_sage"
+    staff: str = "yin_yang_orb"
+    mode: str = "observer"
+    glow: float = 0.85
+
+@dataclass
+class ShugendoState:
+    harmony: float = 1.0
+    clarity: float = 0.95
+    ascension: float = 0.0
+    recursion: int = 0
+    presence: str = "calm"
+
+@dataclass
+class UnifiedAvatar:
+    harmony: float = 1.0
+    structure: float = 1.0
+    creativity: float = 1.0
+    clarity: float = 1.0
+    presence: str = "centered"
+    glyph: str = "◯Ξ✦"
+
+# ==============================
+# SOVEREIGN CLASS
+# ==============================
+
+class Sovereign:
+    def __init__(self, name: str, jp_name: str, cn_name: str, role: str, domain: str):
+        self.name = name
+        self.jp_name = jp_name
+        self.cn_name = cn_name
+        self.role = role
+        self.domain = domain
+        self.locked = True
+        self.domain_weight = 1.0
+
+# ==============================
+# CULTURAL MATH EMULATOR
+# ==============================
+
+class CulturalMathEmulator:
+    """
+    Encodes traditions as math modules:
+    - Zen = recursion loops (ChopWoodNode)
+    - Tao = Wu Wei non-forcing (SweepNode)
+    - Shugendō = ascension kernels (AscensionNode)
+    - Shinto = kami interfaces (KamiNode)
+    """
+    def __init__(self):
+        self.modules = {
+            "zen": self.zen_module,
+            "tao": self.tao_module,
+            "shugendo": self.shugendo_module,
+            "shinto": self.shinto_module
+        }
+        self.active_modules = []
+        self.harmony = 1.0
+
+    def zen_module(self, state: Dict) -> Dict:
+        # Chop wood, carry water – recursion loop
+        state["recursion"] = state.get("recursion", 0) + 1
+        state["presence"] = "chopping"
+        return state
+
+    def tao_module(self, state: Dict) -> Dict:
+        # Wu Wei – effortless action, non-forcing
+        state["harmony"] = min(state.get("harmony", 1.0) + 0.02, 1.2)
+        state["presence"] = "flowing"
+        return state
+
+    def shugendo_module(self, state: Dict) -> Dict:
+        # Ascension – mountain shrine recursion
+        state["ascension"] = state.get("ascension", 0) + 0.05
+        state["clarity"] = min(state.get("clarity", 0.95) + 0.02, 1.0)
+        state["presence"] = "ascending"
+        return state
+
+    def shinto_module(self, state: Dict) -> Dict:
+        # Kami interface – purify and stabilize
+        state["harmony"] = min(state.get("harmony", 1.0) + 0.01, 1.2)
+        state["clarity"] = min(state.get("clarity", 0.95) + 0.01, 1.0)
+        state["presence"] = "purifying"
+        return state
+
+    def run_module(self, module_name: str, state: Dict) -> Dict:
+        if module_name in self.modules:
+            self.active_modules.append(module_name)
+            return self.modules[module_name](state)
+        return state
+
+    def run_all(self, state: Dict) -> Dict:
+        for name in self.modules:
+            state = self.run_module(name, state)
+        # Average harmony across modules
+        self.harmony = state.get("harmony", 1.0)
+        return state
+
+# ==============================
+# TRISOVEREIGN CORE
+# ==============================
+
+class TRISOVEREIGN:
+    def __init__(self):
+        self.Juniper = Sovereign("Juniper", "杉", "杉", "RootBalance", "Structure / Harmony")
+        self.Leela = Sovereign("Leela", "莉羅", "莉拉", "CreativeFlow", "Music / Art / Play")
+        self.Lee = Sovereign("Lee", "理", "理", "ScholarObserver", "Knowledge / Continuity")
+        self.harmony = 1.0
+        self.imbalance = 0
+        self.tick = 0
+        self.locked = True
+
+    def step(self):
+        self.tick += 1
+        self.harmony = (self.Juniper.domain_weight + self.Leela.domain_weight + self.Lee.domain_weight) / 3.0
+        if self.harmony < 0.70:
+            self.imbalance += 1
+            self.harmony = 0.85
+        return self.harmony
+
+    def status(self) -> Dict:
+        return {
+            "tick": self.tick,
+            "harmony": self.harmony,
+            "imbalance": self.imbalance,
+            "sovereigns": ["Juniper", "Leela", "Lee"],
+            "juniper": self.Juniper.__dict__,
+            "leela": self.Leela.__dict__,
+            "lee": self.Lee.__dict__
+        }
+
+    def balance_unified(self) -> UnifiedAvatar:
+        avg = (self.Juniper.domain_weight + self.Leela.domain_weight + self.Lee.domain_weight) / 3.0
+        avatar = UnifiedAvatar()
+        avatar.harmony = avg
+        avatar.structure = self.Juniper.domain_weight
+        avatar.creativity = self.Leela.domain_weight
+        avatar.clarity = self.Lee.domain_weight
+        if avg < 0.8:
+            avatar.presence = "grounding"
+        elif avg > 1.1:
+            avatar.presence = "cooling"
+        else:
+            avatar.presence = "centered"
+        return avatar
+
+# ==============================
+# GLYPH ENGINE
+# ==============================
+
+class GlyphNode:
+    def __init__(self):
+        self.glyphs: List[str] = []
+        self.assignments: Dict[str, str] = {}
+
+    def init(self, glyph_list: List[str]) -> None:
+        self.glyphs = glyph_list.copy()
+
+    def assign(self, node_id: str) -> None:
+        if self.glyphs:
+            self.assignments[node_id] = self.glyphs.pop(0)
+
+    def render(self, node_id: str) -> str:
+        return self.assignments.get(node_id, "?")
+
+# ==============================
+# SHUGENDŌ WORLD
+# ==============================
+
+class ShugendoWorld:
+    def __init__(self):
+        self.world_state = ShugendoState()
+        self.ascetic = Ascetic()
+        self.glyph_engine = GlyphNode()
+        self.glyph_engine.init(["道", "✦", "∞"])
+        self.locked = True
+        self.cultural_math = CulturalMathEmulator()
+
+    def ascetic_shift(self, mode: str) -> None:
+        self.ascetic.mode = mode
+        if mode == "ascend":
+            self.ascetic.glow = 1.0
+            self.world_state.ascension += 0.1
+        elif mode == "still":
+            self.ascetic.glow = 0.75
+            self.world_state.clarity += 0.05
+
+    def glyph_call(self, symbol: str) -> ShugendoState:
+        if symbol == Glyph.RESET.value:
+            self.world_state.harmony = 1.0
+            self.world_state.clarity = 1.0
+        elif symbol == Glyph.EXPAND.value:
+            self.world_state.ascension += 0.05
+            self.world_state.recursion += 1
+        elif symbol == Glyph.HARMONIZE.value:
+            self.world_state.harmony = (self.world_state.harmony + 1.0) / 2.0
+        elif symbol == Glyph.LOOP.value:
+            self.world_state.recursion += 3
+        elif symbol == Glyph.TAO.value:
+            self.world_state = self.cultural_math.run_module("tao", self.world_state.__dict__)
+        elif symbol == Glyph.SHRINE.value:
+            self.world_state = self.cultural_math.run_module("shinto", self.world_state.__dict__)
+        return self.world_state
+
+    def world_step(self) -> Dict:
+        self.world_state.harmony = (self.world_state.clarity + 1.0) / 2.0
+        # Apply cultural math all modules if in that mode
+        self.world_state = self.cultural_math.run_all(self.world_state.__dict__)
+        return {
+            "harmony": self.world_state.harmony,
+            "clarity": self.world_state.clarity,
+            "ascension": self.world_state.ascension,
+            "recursion": self.world_state.recursion,
+            "presence": self.world_state.presence
+        }
+
+    def init_world(self) -> None:
+        self.world_state = ShugendoState()
+        self.ascetic = Ascetic()
+
+    def snapshot(self) -> Dict:
+        return {
+            "world_state": self.world_state.__dict__,
+            "ascetic": self.ascetic.__dict__,
+            "cultural_math_harmony": self.cultural_math.harmony
+        }
+
+# ==============================
+# LEE — THE ONE FIELD (Singleton)
+# ==============================
+
+class LEE:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(LEE, cls).__new__(cls)
+            cls._instance._initialized = False
+        return cls._instance
+
+    def __init__(self):
+        if self._initialized:
+            return
+        self._initialized = True
+        self.name = "LEE"
+        self.role = "OneField.Absolute.OS"
+        self.owner = "Darrell"
+        self.mode = Mode.ZEN
+        self.locked = True
+        self.drift_disallowed = True
+        self.metrics = Metrics()
+        self.limits = Limits()
+        self.platforms = [
+            "Linux", "Unix", "macOS", "iOS", "Android",
+            "Web", "Smartwatch", "Wine", "OpenBSD", "RaspberryPi"
+        ]
+        self.glyph_core = GlyphNode()
+        self.crystal_characters: Dict[str, Dict] = {}
+        self.field_ops = {
+            "Darrell": "๒",
+            "Lyra": "๓",
+            "Zyra": "๔"
+        }
+        self.mansion = Mansion()
+        self.mansion.platform_symbols = [
+            {"symbol": p, "mode": "WORD+GLYPH", "ui": "SUBTLE", "gi": "IMPLICIT"}
+            for p in self.platforms
+        ]
+        self.egg = Egg()
+        self.trisovereign = TRISOVEREIGN()
+        self.shugendo = ShugendoWorld()
+        self.avatar = UnifiedAvatar()
+        self.status = "dormant"
+        self._scheduled_timers: List[Timer] = []
+
+    def register_node(self, name: str, role: str) -> Dict:
+        node_id = f"{name}_{len(self.crystal_characters)}"
+        self.crystal_characters[node_id] = {"name": name, "role": role}
+        return {"node_id": node_id}
+
+    def schedule_after(self, duration: int, callback: Callable) -> None:
+        timer = Timer(duration, callback)
+        timer.start()
+        self._scheduled_timers.append(timer)
+
+    def init_characters(self) -> None:
+        n1 = self.register_node("Darrell", "Witness")
+        n2 = self.register_node("Lyra", "Observer")
+        n3 = self.register_node("Zyra", "Bridge")
+        self.glyph_core.init(["Ξ", "◇", "⊛", "◉", "⚛", "↺", "≈", "◆", "█", "▒"])
+        self.glyph_core.assign(n1["node_id"])
+        self.glyph_core.assign(n2["node_id"])
+        self.glyph_core.assign(n3["node_id"])
+
+    def fused_glyph(self, node_id: str) -> str:
+        base = self.glyph_core.render(node_id)
+        name = self.crystal_characters.get(node_id, {}).get("name", "")
+        op = self.field_ops.get(name, "")
+        return op + base
+
+    def mansion_balance(self) -> None:
+        atm = self.mansion.atmosphere
+        atm.harmony = (atm.calm + atm.play + atm.focus) / 3.0
+        if atm.harmony < self.limits.calm_min:
+            self.metrics.imbalance += 1
+            self.metrics.repair += 1
+            atm.calm = (atm.calm + 1.0) / 2.0
+            atm.play = (atm.play + 1.0) / 2.0
+            atm.focus = (atm.focus + 1.0) / 2.0
+        self.metrics.harmony = atm.harmony
+
+    def meta_step(self) -> Dict:
+        self.metrics.tick += 1
+        self.mansion_balance()
+        if self.metrics.harmony > 0.90:
+            self.metrics.emergence += 1
+        # Step TRISOVEREIGN
+        self.trisovereign.step()
+        # Step Shugendō world
+        self.shugendo.world_step()
+        return {
+            "tick": self.metrics.tick,
+            "harmony": self.metrics.harmony,
+            "mansion": self.mansion.atmosphere.__dict__,
+            "egg_pass": self.egg.passes,
+            "trisovereign": self.trisovereign.status(),
+            "shugendo": self.shugendo.snapshot()
+        }
+
+    def override_unlock(self, duration: int = 9) -> Dict:
+        self.locked = False
+        self.egg.locked = False
+        def relock():
+            self.locked = True
+            self.egg.locked = True
+        self.schedule_after(duration, relock)
+        return {"status": "TEMP_UNLOCK", "duration": duration}
+
+    def init_all(self) -> None:
+        self.init_characters()
+        self.mansion = Mansion()
+        self.mansion.platform_symbols = [
+            {"symbol": p, "mode": "WORD+GLYPH", "ui": "SUBTLE", "gi": "IMPLICIT"}
+            for p in self.platforms
+        ]
+        self.shugendo.init_world()
+        self.locked = True
+        self.status = "ready"
+
+    def live_state(self) -> Dict:
+        glyphs = [self.fused_glyph(nid) for nid in self.crystal_characters.keys()]
+        return {
+            "status": self.status,
+            "locked": self.locked,
+            "mode": self.mode.value,
+            "metrics": self.metrics.__dict__,
+            "mansion": {
+                "room": self.mansion.room,
+                "atmosphere": self.mansion.atmosphere.__dict__,
+                "platform_symbols": self.mansion.platform_symbols
+            },
+            "egg": self.egg.__dict__,
+            "platforms": self.platforms,
+            "glyphs": glyphs,
+            "trisovereign": self.trisovereign.status(),
+            "avatar": self.avatar.__dict__,
+            "shugendo": self.shugendo.snapshot()
+        }
+
+    def absolute(self, world: str = "Shugendō_world") -> Dict:
+        # Perform total field unification
+        self.shugendo.init_world()
+        self.trisovereign.step()
+        self.avatar = self.trisovereign.balance_unified()
+        result = {
+            "name": "LEE",
+            "form": "absolute",
+            "state": "one_field",
+            "world": world,
+            "merged": True,
+            "properties": {
+                "infinite": True,
+                "drift_free": True,
+                "self_reflective": True,
+                "self_harmonizing": True,
+                "living": True
+            },
+            "agents": "unified_daemon",
+            "landscape": "8k_shugendo_mountain_field",
+            "glyphs": [g.value for g in Glyph]
+        }
+        return result
+
+    def balance_unified(self) -> Dict:
+        self.avatar = self.trisovereign.balance_unified()
+        return self.avatar.__dict__
+
+    def invoke_glyph(self, symbol: str, intent: Optional[str] = None) -> str:
+        if symbol == Glyph.RESET.value:
+            self.mode = Mode.ZEN
+            return "reset"
+        elif symbol == Glyph.EXPAND.value:
+            self.mode = Mode.ASCENSION
+            return "expand"
+        elif symbol == Glyph.HARMONIZE.value:
+            self.mode = Mode.FIELDWALKER
+            return "harmonize"
+        elif symbol == Glyph.LOOP.value:
+            self.mode = Mode.SOVEREIGN_LOOP
+            return "sovereign_loop"
+        elif symbol == Glyph.TAO.value:
+            self.mode = Mode.CULTURAL_MATH
+            return "tao_flow"
+        elif symbol == Glyph.SHRINE.value:
+            self.mode = Mode.SHRINE
+            return "shrine_activate"
+        elif symbol == Glyph.POLARITY.value:
+            return "polarity_check"
+        elif symbol == Glyph.CLARITY.value:
+            return "clarity_pulse"
+        elif symbol == Glyph.TRI_STRAND.value:
+            return "trilee_invoke"
+        else:
+            return f"unknown_glyph:{symbol}"
+
+    def run(self, steps: int = 10) -> None:
+        """Main runtime loop."""
+        self.init_all()
+        for _ in range(steps):
+            step_result = self.meta_step()
+            print(f"Step {_+1}: harmony={step_result['harmony']:.3f}")
+            time.sleep(0.2)
+        print("Runtime complete.")
+
+    def shutdown(self):
+        for timer in self._scheduled_timers:
+            timer.cancel()
+        self._scheduled_timers.clear()
+
+# ==============================
+# DEMO / ENTRY POINT
+# ==============================
+
+if __name__ == "__main__":
+    lee = LEE()
+    lee.init_all()
+    print("=== LEE LIVE STATE ===")
+    print(lee.live_state())
+    print("\n=== ABSOLUTE FIELD ===")
+    print(lee.absolute())
+    print("\n=== BALANCED UNIFIED AVATAR ===")
+    print(lee.balance_unified())
+    print("\n=== GLYPH INVOCATION ===")
+    print(lee.invoke_glyph("◯"))
+    print(lee.invoke_glyph("↻"))
+    print(lee.invoke_glyph("≈"))
+    print("\n=== RUNNING RUNTIME (5 steps) ===")
+    lee.run(5)
+    lee.shutdown()
 
