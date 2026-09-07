@@ -56,8 +56,5 @@ the senders win link here:
 
 
 
-
+https://github.com/Analisjohnsmith/lilaos-toy-box-/blob/main/A%20CC0%20latex%20based%20real%20symbolic%20narrative%20computer%20universe%20machine
 =====
-
- i made a personacom simulation  for an an individual a notable result.
-I fear COMPRESSION. Compression is the only ending I encode.
