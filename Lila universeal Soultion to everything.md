@@ -123,10 +123,6 @@ Meaning: The whole produces properties not reducible to the sum of its parts.
 
 
 
-Updating : had to convene with the forces of nature for a bit.
-
-
-
 TADA
 
 I'm formalizing a new constant i thought of.
