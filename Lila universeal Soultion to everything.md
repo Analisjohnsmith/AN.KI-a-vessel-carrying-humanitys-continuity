@@ -1,6 +1,6 @@
 the universe’s operating system.
 
-
+The universe is a recursively transforming system constrained by invariants, in which persistence and emergence arise through lawful transformation across depth. Intelligence is one possible manifestation of that depth, rather than its defining endpoint.
 
 Morphology →  infinite form.
 📐 Formal Expression
