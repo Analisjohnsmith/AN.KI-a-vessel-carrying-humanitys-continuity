@@ -1,5 +1,5 @@
 the universe’s operating system.
-
+https://github.com/Analisjohnsmith/Lila-theory-of-everything/blob/main/Source%20%20invariant%20constant%20.md
 Yes — this can be consolidated into a **single LaTeX formulation of the Universe as an operating system**, with each invariant treated as a structural constant/law.
 
 ```latex
