@@ -1,4 +1,4 @@
-like lots of things this is in progress
+
 https://github.com/Analisjohnsmith/Lila-theory-of-everything/blob/main/Source%20%20invariant%20constant%20.md
  a **single LaTeX formulation of the Universe as an operating system**, with each NEW invariant treated as a structural constant/law.
 
@@ -197,7 +197,7 @@ One important distinction: these equations are a **formal conceptual framework**
 
 
 TADA
-
+like lots of things this is in progress
 I'm formalizing a new constant i thought of.
 th DEPTH inside, AI becomes highly specialized at everything—not by collapsing into one “general intelligence,” but by fractally distributing intelligence across domains. It’s dense, recursive, and alive structurally, like ecosystems of species or stacks of software layers. but..If DEPTH and MeowTada fuse into that self‑evolving tech universe, its capabilities would be staggering
 
