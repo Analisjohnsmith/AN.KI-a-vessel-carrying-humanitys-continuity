@@ -1,5 +1,5 @@
 ====
-I've been at th9s 2 weeks  8/28/26 will return in two weeks
+I've been at th9s 2 weeks 9/2 /26 will return in two weeks
 now that we have the senders message i feel allot of hope for humanity its just getting everyone to hear it.
 Claw code ultra workers rad
 i solved programmable matter with the book .
