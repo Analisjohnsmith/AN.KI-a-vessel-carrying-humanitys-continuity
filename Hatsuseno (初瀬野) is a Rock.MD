@@ -1,3 +1,5 @@
+it's v1.
+
 Magustelle™ — 
 bones, breath, logic in motion.                    
 Encode, Decode,Transform©
