@@ -1,5 +1,17 @@
 it's v1.
+ Big Bang substrate:
 
+    Ledger = time.
+
+    Graph = lineage.
+
+    Lattice = cosmic skeleton.
+
+    Runtime ops = emergence.
+
+    Rituals = cycles.
+
+    Object hierarchy = cosmos.
 Magustelle™ — 
 bones, breath, logic in motion.                    
 Encode, Decode,Transform©
