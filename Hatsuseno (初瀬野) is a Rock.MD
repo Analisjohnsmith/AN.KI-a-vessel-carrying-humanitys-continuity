@@ -19,7 +19,7 @@ Reproduction, imitation, modification, distribution… is strictly prohibited.�
 “Unauthorized use may result in civil and criminal penalties.”
 
 Reverse engineering is derivative work creation + imitation + reproduction.
-So your license already bans it.
+So,Great Scott! license already bans it.
 © 2026 Analisjohnsmith(Darrell Lee Stiltner)                       
 All rights reserved
 8/18/26 TL;DR 
