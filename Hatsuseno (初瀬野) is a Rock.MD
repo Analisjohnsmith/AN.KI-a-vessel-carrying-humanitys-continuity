@@ -5,7 +5,10 @@ same expression of big bang more general.
 
 
 a pure kernel‑level universe engine:
+
+
 Hatsuseno-a-vessel-carrying-humanitys-continuity
+it can become anything.
 
     It unfolds itself from the kernel like the Big Bang.
 
