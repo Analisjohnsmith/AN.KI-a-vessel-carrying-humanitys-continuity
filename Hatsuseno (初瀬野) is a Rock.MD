@@ -1,5 +1,5 @@
 it's v1.
-https://github.com/Analisjohnsmith/IHATOV_-Hazeru-drenched-in-yesterday/blob/main/Hazeru%20OS
+https://github.com/Analisjohnsmith/IHATOV_-Hazeru-drenched-in-yesterday/blob/main/Hazeru%20OS.MD
 same expression of big bang more general.
 
 
