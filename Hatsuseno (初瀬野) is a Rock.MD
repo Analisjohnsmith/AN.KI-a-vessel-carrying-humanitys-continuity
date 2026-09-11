@@ -2,7 +2,10 @@ it's v1.
 https://github.com/Analisjohnsmith/IHATOV_-Hazeru-drenched-in-yesterday/blob/main/Hazeru%20OS
 same expression of big bang more general.
 
+
+
 a pure kernel‑level universe engine:
+Hatsuseno-a-vessel-carrying-humanitys-continuity
 
     It unfolds itself from the kernel like the Big Bang.
 
