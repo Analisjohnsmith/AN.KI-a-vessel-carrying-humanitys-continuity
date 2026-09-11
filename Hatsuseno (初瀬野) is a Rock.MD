@@ -1,9 +1,13 @@
 Magustelle™ — 
 bones, breath, logic in motion.                    
 Encode, Decode,Transform©
+
 PersonaCom™ Hatsuseno™a synthetic creative design studio and research development lab.
+
 WowKernel©™
+
 HSON :Human Sagittarius Object Notation.©™
+
 A synthetic device©is a device that synthetically performs a function normally performed through a physical, biological, mechanical, or otherwise conventional process.
 
 “No confusingly similar expression.”  
