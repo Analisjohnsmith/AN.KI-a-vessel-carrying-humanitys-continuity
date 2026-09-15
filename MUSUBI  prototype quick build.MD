@@ -3423,3 +3423,494 @@ plt.savefig(
 
 
 plt.show()  render all 9 objects with center blue  in this style full color  try the pioeline again mechanically analize catm
+
+
+
+====
+===
+===
+NEIDAN:
+import json
+import time
+import hashlib
+import copy
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional, Callable
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# BLOCK 1 : NEIDAN — Inner Alchemical Runtime / Terminal Universe
+# Language: NEIDAN  |  Shell: hsonOS  |  Runtime: lz  |  Platform: Hella
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NEIDAN_BANNER = "NEIDAN"
+NEIDAN_LANGUAGE = "NEIDAN"
+NEIDAN_COMMODITY = "NEIDAN"
+
+NEIDAN_IDENTITY = {
+    "name": "NEIDAN RUNTIME",
+    "expansion": "Inner Alchemical Terminal",
+    "role": "Root Operation",
+    "banner": NEIDAN_BANNER,
+    "family": "AURIRA.Platform",
+    "archetype": "Inner Fire / Gentle Kernel",
+}
+
+NEIDAN_AXES = {
+    "technical": {
+        "logical": True, "symbolic": True, "computational": True,
+        "formal": True, "systems": True, "architectural": True,
+    },
+    "meaning": {
+        "archetypal": True, "contemplative": True, "narrative": True,
+        "ritual": True, "gentle_guard": True, "alignment": True,
+    },
+    "fractal": {
+        "recursive": True, "modular": True, "swarm_based": True,
+        "reversible": True, "checkpointed": True, "universe_scale": True,
+    },
+}
+
+NEIDAN_SHELL = {
+    "internal_host": "hsonOS",
+    "mode": "structural-shell",
+    "exposed": False,
+}
+
+NEIDAN_RUNTIME = {
+    "engine": "lz",
+    "interpreter": "/usr/bin/lz",
+    "entrypoint": "/opt/lz/neidan_core.lz",
+    "deterministic": True,
+    "sandboxed": True,
+    "lineage": True,
+    "tamper_proof": True,
+    "audit_target": "continuity.field",
+}
+
+NEIDAN_INVARIANTS = {
+    "language_is_neidan": True,
+    "banner_non_overridable": True,
+    "continuity_zero_loss": True,
+    "cross_system_consistency": True,
+    "archetype_alignment": True,
+}
+
+
+class NeidanModule:
+    def __init__(self, module_id: str, features: List[str], interactive: bool = True,
+                 fractal_ready: bool = True, procedural_mutations: bool = True,
+                 temporal_events: bool = True, cross_module_signals: bool = True,
+                 symbolic_meaning: str = ""):
+        self.id = module_id
+        self.features = features
+        self.interactive = interactive
+        self.fractal_ready = fractal_ready
+        self.procedural_mutations = procedural_mutations
+        self.temporal_events = temporal_events
+        self.cross_module_signals = cross_module_signals
+        self.symbolic_meaning = symbolic_meaning
+        self.state = "dormant"
+        self.lineage: List[str] = []
+
+    def realize(self) -> Dict[str, Any]:
+        self.state = "active"
+        self.lineage.append(f"realized at {time.time()}")
+        return {
+            "module": self.id,
+            "state": self.state,
+            "features": self.features,
+            "symbolic_meaning": self.symbolic_meaning,
+        }
+
+    def mutate(self, field: str, value: Any) -> Dict[str, Any]:
+        if not self.procedural_mutations:
+            return {"error": "mutations locked", "module": self.id}
+        old = getattr(self, field, None)
+        setattr(self, field, value)
+        self.lineage.append(f"mutate {field}: {old} -> {value}")
+        return {"module": self.id, "field": field, "old": old, "new": value}
+
+    def signal(self, target: "NeidanModule") -> Dict[str, Any]:
+        if not self.cross_module_signals or not target.cross_module_signals:
+            return {"error": "cross-module signals disabled"}
+        self.lineage.append(f"signal -> {target.id}")
+        return {"from": self.id, "to": target.id, "type": "cross_module_signal"}
+
+
+class NeidanCheckpointer:
+    def __init__(self):
+        self._snapshots: Dict[str, Any] = {}
+        self._history: List[str] = []
+
+    def save(self, name: str, state: Any) -> str:
+        self._snapshots[name] = copy.deepcopy(state)
+        self._history.append(f"checkpoint save: {name}")
+        return f"checkpoint:{name}"
+
+    def rollback(self, name: str) -> Any:
+        if name not in self._snapshots:
+            return {"error": f"checkpoint '{name}' not found"}
+        self._history.append(f"rollback -> {name}")
+        return copy.deepcopy(self._snapshots[name])
+
+
+class NeidanTerminal:
+    def __init__(self):
+        self.modules: Dict[str, NeidanModule] = {}
+        self.checkpointer = NeidanCheckpointer()
+        self.event_log: List[Dict[str, Any]] = []
+        self._boot_time = time.time()
+        self._active_module: Optional[str] = None
+
+    def boot(self) -> Dict[str, Any]:
+        self._log("boot", "NEIDAN runtime initializing")
+        self._log("boot", f"interpreter: {NEIDAN_RUNTIME['interpreter']}")
+        self._log("boot", f"engine: {NEIDAN_RUNTIME['engine']}")
+        self._log("boot", f"shell: {NEIDAN_SHELL['internal_host']}")
+        return {
+            "banner": NEIDAN_BANNER,
+            "language": NEIDAN_LANGUAGE,
+            "commodity": NEIDAN_COMMODITY,
+            "identity": NEIDAN_IDENTITY,
+            "axes": NEIDAN_AXES,
+            "shell": NEIDAN_SHELL,
+            "runtime": NEIDAN_RUNTIME,
+            "invariants": NEIDAN_INVARIANTS,
+            "modules_loaded": len(self.modules),
+            "state": "active",
+        }
+
+    def register_module(self, module: NeidanModule) -> None:
+        self.modules[module.id] = module
+        self._log("register", f"module: {module.id}")
+
+    def focus(self, module_id: str) -> Dict[str, Any]:
+        if module_id not in self.modules:
+            return {"error": f"module '{module_id}' not found"}
+        self._active_module = module_id
+        result = self.modules[module_id].realize()
+        self._log("focus", f"realized: {module_id}")
+        return result
+
+    def mutate(self, module_id: str, field: str, value: Any) -> Dict[str, Any]:
+        if module_id not in self.modules:
+            return {"error": f"module '{module_id}' not found"}
+        result = self.modules[module_id].mutate(field, value)
+        self._log("mutate", f"{module_id}.{field} = {value}")
+        return result
+
+    def signal(self, from_id: str, to_id: str) -> Dict[str, Any]:
+        if from_id not in self.modules or to_id not in self.modules:
+            return {"error": "module not found"}
+        result = self.modules[from_id].signal(self.modules[to_id])
+        self._log("signal", f"{from_id} -> {to_id}")
+        return result
+
+    def checkpoint_save(self, name: str) -> Dict[str, Any]:
+        state = {mid: m.__dict__.copy() for mid, m in self.modules.items()}
+        ref = self.checkpointer.save(name, state)
+        self._log("checkpoint", f"saved: {name}")
+        return {"checkpoint": name, "ref": ref, "modules": list(state.keys())}
+
+    def checkpoint_rollback(self, name: str) -> Dict[str, Any]:
+        restored = self.checkpointer.rollback(name)
+        if isinstance(restored, dict) and "error" in restored:
+            return restored
+        for mid, snap in restored.items():
+            if mid in self.modules:
+                for k, v in snap.items():
+                    setattr(self.modules[mid], k, v)
+        self._log("rollback", f"restored: {name}")
+        return {"restored": name, "modules": list(restored.keys())}
+
+    def idle(self) -> Dict[str, Any]:
+        self._log("idle", "execution cooled, universe warm")
+        return {
+            "state": "idle",
+            "modules": {
+                mid: {"state": m.state, "symbolic_meaning": m.symbolic_meaning}
+                for mid, m in self.modules.items()
+            },
+        }
+
+    def banner_display(self) -> str:
+        bar = f"  LANGUAGE: {NEIDAN_LANGUAGE}  |  COMMODITY: {NEIDAN_COMMODITY}  |  BANNER: {NEIDAN_BANNER}"
+        sep = "─" * len(bar)
+        lines = [
+            f"{NEIDAN_BANNER} :: full-universe-terminal",
+            sep,
+            f"  modules:",
+        ]
+        for mid, m in self.modules.items():
+            feats = ", ".join(m.features[:3])
+            lines.append(f"    - {mid:16s} [{feats}]")
+        lines.append(sep)
+        lines.append(bar)
+        return "\n".join(lines)
+
+    def _log(self, event: str, detail: str) -> None:
+        self.event_log.append({
+            "time": time.time() - self._boot_time,
+            "event": event,
+            "detail": detail,
+        })
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# BLOCK 2 : MUSUBI — Symbolic Language Runtime / Identity Registry
+# Glyph: ⟐  |  Mascot: Cat.kernel  |  Runtime: musubi.runtime
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MUSUBI_KERNEL = {
+    "operators": {
+        "theta": "mirror / inversion / duality",
+        "rho": "resilience / stabilization / norm-like",
+        "phi": "generative / expansion / combinatorial",
+        "r": "recursion operator (phi . rho . theta)",
+    },
+    "meta": {
+        "closure": True,
+        "identity": True,
+        "composition": "category structure",
+        "symmetry_group": True,
+    },
+}
+
+MUSUBI_VERSE = {
+    "variables": {
+        "chi": "curvature / intensity",
+        "energy": "scalar potential",
+        "omega": "phase-transition flag",
+        "labels": [],
+        "emergence": [],
+    },
+    "update_rule": "apply(symbols) -> state morphism",
+    "lagrangian": "energy + chi",
+}
+
+
+def _sha256(data: str) -> str:
+    return hashlib.sha256(data.encode("utf-8")).hexdigest()
+
+
+@dataclass
+class MusubiIdentity:
+    name: str
+    data: str
+    hash: str = field(init=False)
+
+    def __post_init__(self):
+        self.hash = _sha256(self.data)
+
+    def verify(self, expected: str) -> bool:
+        return self.hash == expected
+
+
+@dataclass
+class MusubiDependency:
+    from_id: str
+    to_id: str
+
+
+class MusubiRegistry:
+    def __init__(self):
+        self.packages: Dict[str, MusubiIdentity] = {}
+        self.dependencies: List[MusubiDependency] = []
+        self._event_log: List[Dict[str, Any]] = []
+
+    def add_package(self, name: str, data: str) -> MusubiIdentity:
+        identity = MusubiIdentity(name=name, data=data)
+        self.packages[name] = identity
+        self._log("add_package", f"{name}")
+        return identity
+
+    def add_dependency(self, from_name: str, to_name: str) -> Optional[MusubiDependency]:
+        if from_name not in self.packages or to_name not in self.packages:
+            return None
+        dep = MusubiDependency(from_id=from_name, to_id=to_name)
+        self.dependencies.append(dep)
+        self._log("add_dependency", f"{from_name} -> {to_name}")
+        return dep
+
+    def verify(self, name: str) -> Optional[bool]:
+        if name not in self.packages:
+            return None
+        pkg = self.packages[name]
+        return pkg.verify(pkg.hash)
+
+    def get(self, name: str) -> Optional[MusubiIdentity]:
+        return self.packages.get(name)
+
+    def list_packages(self) -> List[str]:
+        return list(self.packages.keys())
+
+    def list_dependencies(self) -> List[Dict[str, str]]:
+        return [{"from": d.from_id, "to": d.to_id} for d in self.dependencies]
+
+    def snapshot(self) -> Dict[str, Any]:
+        return {
+            "packages": {
+                name: {"name": pkg.name, "hash": pkg.hash}
+                for name, pkg in self.packages.items()
+            },
+            "dependencies": self.list_dependencies(),
+        }
+
+    def _log(self, event: str, detail: str) -> None:
+        self._event_log.append({
+            "time": time.time(),
+            "event": event,
+            "detail": detail,
+        })
+
+
+class MusubiRuntime:
+    def __init__(self):
+        self.registry = MusubiRegistry()
+        self.kernel = MUSUBI_KERNEL
+        self.verse = MUSUBI_VERSE
+
+    def boot(self) -> Dict[str, Any]:
+        return {
+            "glyph": "⟐",
+            "mascot": "Cat.kernel",
+            "runtime": "musubi.runtime",
+            "kernel": self.kernel,
+            "verse": self.verse,
+            "state": "active",
+        }
+
+    def apply_operator(self, op: str, state: Any) -> Any:
+        ops = self.kernel["operators"]
+        if op not in ops:
+            return {"error": f"operator '{op}' not in kernel"}
+        if op == "theta":
+            if isinstance(state, dict):
+                return {v: k for k, v in state.items()}
+            return list(reversed(state)) if isinstance(state, list) else state
+        if op == "rho":
+            return state
+        if op == "phi":
+            if isinstance(state, list):
+                return state + list(reversed(state))
+            return state
+        if op == "r":
+            return self.apply_operator("phi",
+                   self.apply_operator("rho",
+                   self.apply_operator("theta", state)))
+        return state
+
+    def lagrangian(self, energy: float, chi: float) -> float:
+        return energy + chi
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# DEMO — both blocks running together in one process
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def main():
+    print("=" * 64)
+    print("  NEIDAN + MUSUBI  —  Two Blocks, One File")
+    print("=" * 64)
+
+    # ── BLOCK 1: NEIDAN ──────────────────────────────────────────────────
+    print("\n┌─ BLOCK 1: NEIDAN ─────────────────────────────────────┐\n")
+
+    terminal = NeidanTerminal()
+
+    witch = NeidanModule(
+        "anime_witch_01",
+        ["soft_eyes", "soft_smile", "round_ears", "long_black_hair", "point_hat"],
+        symbolic_meaning="gentle guardian",
+    )
+    tricycle = NeidanModule(
+        "tiny_tricycle_01",
+        ["interactive", "modular", "fractal"],
+        symbolic_meaning="playful transport",
+    )
+    cats = NeidanModule(
+        "cute_cats_01",
+        ["purr", "hop", "gaze", "tail_flick"],
+        symbolic_meaning="distributed guardianship",
+    )
+
+    terminal.register_module(witch)
+    terminal.register_module(tricycle)
+    terminal.register_module(cats)
+
+    boot_info = terminal.boot()
+    print(terminal.banner_display())
+    print()
+
+    print(f"  boot: {boot_info['state']}")
+    print(f"  modules loaded: {boot_info['modules_loaded']}")
+    print()
+
+    print("  > focus anime_witch_01")
+    print(f"  {json.dumps(terminal.focus('anime_witch_01'), indent=4)}")
+    print()
+
+    print("  > signal anime_witch_01 -> tiny_tricycle_01")
+    print(f"  {json.dumps(terminal.signal('anime_witch_01', 'tiny_tricycle_01'), indent=4)}")
+    print()
+
+    print("  > focus cute_cats_01")
+    print(f"  {json.dumps(terminal.focus('cute_cats_01'), indent=4)}")
+    print()
+
+    print('  > checkpoint save "pre_mutation"')
+    print(f"  {json.dumps(terminal.checkpoint_save('pre_mutation'), indent=4)}")
+    print()
+
+    print('  > mutate tiny_tricycle_01 symbolic_meaning = "wide orbit"')
+    print(f"  {json.dumps(terminal.mutate('tiny_tricycle_01', 'symbolic_meaning', 'wide orbit'), indent=4)}")
+    print()
+
+    print('  > rollback "pre_mutation"')
+    print(f"  {json.dumps(terminal.checkpoint_rollback('pre_mutation'), indent=4)}")
+    print()
+
+    print("  > idle")
+    print(f"  {json.dumps(terminal.idle(), indent=4)}")
+
+    # ── BLOCK 2: MUSUBI ──────────────────────────────────────────────────
+    print("\n├─ BLOCK 2: MUSUBI ─────────────────────────────────────┤\n")
+
+    musubi = MusubiRuntime()
+    musubi_info = musubi.boot()
+    print(f"  glyph: {musubi_info['glyph']}  mascot: {musubi_info['mascot']}")
+    print(f"  runtime: {musubi_info['runtime']}")
+    print(f"  kernel operators: {list(musubi_info['kernel']['operators'].keys())}")
+    print(f"  lagrangian: {musubi_info['verse']['lagrangian']}")
+    print()
+
+    musubi.registry.add_package("cosmos", "structured inconsistency")
+    musubi.registry.add_package("identity", "verification and compression")
+    musubi.registry.add_dependency("cosmos", "identity")
+
+    print(f"  packages: {musubi.registry.list_packages()}")
+    print(f"  dependencies: {musubi.registry.list_dependencies()}")
+    print(f"  verify('cosmos'): {musubi.registry.verify('cosmos')}")
+    print(f"  verify('identity'): {musubi.registry.verify('identity')}")
+    print()
+
+    state = ["a", "b", "c"]
+    print(f"  state: {state}")
+    print(f"  theta(state): {musubi.apply_operator('theta', state)}")
+    print(f"  phi(state):   {musubi.apply_operator('phi', state)}")
+    print(f"  r(state):     {musubi.apply_operator('r', state)}")
+    print(f"  lagrangian(energy=0.7, chi=0.3): {musubi.lagrangian(0.7, 0.3)}")
+    print()
+
+    print(f"  registry snapshot:")
+    snapshot = musubi.registry.snapshot()
+    print(f"  {json.dumps(snapshot, indent=4)}")
+
+    print("\n└────────────────────────────────────────────────────────┘")
+    print(f"  NEIDAN events: {len(terminal.event_log)}")
+    print(f"  MUSUBI events: {len(musubi.registry._event_log)}")
+    print("  two blocks, one file, done.\n")
+
+
+if __name__ == "__main__":
+    main()
