@@ -1,4 +1,187 @@
+Here’s the consolidated, runnable Python script combining both code blocks from your file: the **2D Feedback‑Geometry Engine** and the **3D Feedback‑Geometry Engine**.  
+It saves transparent PNGs for both and can optionally display them.
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
+
+
+def make_transparent(fig, ax):
+    """Make figure/axes background transparent."""
+    fig.patch.set_alpha(0.0)
+    try:
+        ax.patch.set_alpha(0.0)
+        ax.set_facecolor("none")
+    except Exception:
+        pass
+
+
+# ------------------------------------------------------------
+# 2D Feedback-Geometry Engine
+# ------------------------------------------------------------
+def plot_2d_engine(savepath="feedback_geometry_2d.png", show=False):
+    center = np.array([0.0, 0.0])
+    r_field = 1.0
+    r_memory = 2.0
+    r_comm = 3.0
+
+    theta = np.linspace(0, 2 * np.pi, 400)
+
+    x_field = center[0] + r_field * np.cos(theta)
+    y_field = center[1] + r_field * np.sin(theta)
+
+    x_memory = center[0] + r_memory * np.cos(theta)
+    y_memory = center[1] + r_memory * np.sin(theta)
+
+    x_comm = center[0] + r_comm * np.cos(theta)
+    y_comm = center[1] + r_comm * np.sin(theta)
+
+    # Agents on the field circle
+    agent_angles = np.linspace(0, 2 * np.pi, 8, endpoint=False)
+    agent_r = r_field
+    agent_x = center[0] + agent_r * np.cos(agent_angles)
+    agent_y = center[1] + agent_r * np.sin(agent_angles)
+
+    fig, ax = plt.subplots(figsize=(8, 8))
+    make_transparent(fig, ax)
+
+    # Layers
+    ax.plot(x_field, y_field, color="#66ccff", linewidth=2, label="Field")
+    ax.plot(x_memory, y_memory, color="#ffaa33", linewidth=2, label="Memory")
+    ax.plot(x_comm, y_comm, color="#dd66ff", linewidth=2, label="Communication")
+
+    # Agents
+    ax.scatter(agent_x, agent_y, color="black", s=40, label="Agents")
+
+    def arrow(start, end, color, label=None):
+        ax.annotate(
+            "",
+            xy=end,
+            xytext=start,
+            arrowprops=dict(arrowstyle="->", color=color, linewidth=2),
+        )
+        if label:
+            mid = (np.array(start) + np.array(end)) / 2
+            ax.text(mid[0], mid[1], label, color=color, fontsize=10)
+
+    # Feedback flow
+    arrow((r_field, 0), (r_memory, 0), "#ffaa33", "F→M")
+    arrow((0, r_memory), (0, r_comm), "#dd66ff", "M→C")
+    arrow((-r_comm, 0), (-agent_r, 0), "green", "C→A")
+    arrow((0, -agent_r), (0, -r_field), "#66ccff", "A→F")
+
+    ax.set_aspect("equal")
+    ax.axis("off")
+    ax.legend()
+    ax.set_title("Feedback‑Geometry Engine", fontsize=16)
+
+    plt.savefig(savepath, transparent=True, bbox_inches="tight", pad_inches=0.1)
+    if show:
+        plt.show()
+    plt.close(fig)
+
+
+# ------------------------------------------------------------
+# 3D Feedback-Geometry Engine
+# ------------------------------------------------------------
+def plot_3d_engine(savepath="feedback_geometry_3d.png", show=False):
+    # Angular coordinates
+    theta = np.linspace(0, 2 * np.pi, 150)
+    phi = np.linspace(0, np.pi, 150)
+    theta, phi = np.meshgrid(theta, phi)
+
+    # Layer radii
+    r_field = 1.0 + 0.1 * np.sin(6 * theta) * np.sin(3 * phi)
+    r_memory = 1.4 + 0.15 * np.sin(4 * theta + 1.2) * np.cos(2 * phi)
+    r_comm = 1.8 + 0.2 * np.sin(8 * theta + 0.4) * np.sin(5 * phi)
+
+    # Convert to xyz
+    def to_xyz(r):
+        x = r * np.sin(phi) * np.cos(theta)
+        y = r * np.sin(phi) * np.sin(theta)
+        z = r * np.cos(phi)
+        return x, y, z
+
+    xF, yF, zF = to_xyz(r_field)
+    xM, yM, zM = to_xyz(r_memory)
+    xC, yC, zC = to_xyz(r_comm)
+
+    # Curvature nodes
+    nodes_t = np.linspace(0, 2 * np.pi, 12)
+    nodes_p = np.linspace(0, np.pi, 12)
+    nodes_r = 1.4 + 0.3 * np.sin(3 * nodes_t)
+
+    nodes_x = nodes_r * np.sin(nodes_p) * np.cos(nodes_t)
+    nodes_y = nodes_r * np.sin(nodes_p) * np.sin(nodes_t)
+    nodes_z = nodes_r * np.cos(nodes_p)
+
+    # Feedback vectors
+    vec_points = np.linspace(0, np.pi / 1.2, 40)
+
+    vx = 1.2 * np.cos(vec_points)
+    vy = 1.2 * np.sin(vec_points)
+    vz = 0.4 * np.sin(3 * vec_points)
+
+    ux = 0.6 * np.cos(vec_points)
+    uy = 0.6 * np.sin(vec_points)
+    uz = 0.2 * np.sin(2 * vec_points)
+
+    # Plot
+    fig = plt.figure(figsize=(10, 10))
+    ax = fig.add_subplot(111, projection="3d")
+    make_transparent(fig, ax)
+
+    # Shells
+    ax.plot_surface(xF, yF, zF, color="#66ccff", alpha=0.45, linewidth=0)
+    ax.plot_surface(xM, yM, zM, color="#ffaa33", alpha=0.35, linewidth=0)
+    ax.plot_surface(xC, yC, zC, color="#dd66ff", alpha=0.25, linewidth=0)
+
+    # Curvature nodes
+    ax.scatter(nodes_x, nodes_y, nodes_z, color="white", edgecolor="black", s=60)
+
+    # Feedback vectors
+    ax.quiver(vx, vy, vz, ux, uy, uz, length=0.3, color="lime", linewidth=2)
+
+    ax.set_axis_off()
+    ax.set_title("3D Feedback‑Geometry Engine", fontsize=16)
+
+    plt.savefig(savepath, transparent=True, bbox_inches="tight", pad_inches=0.1)
+    if show:
+        plt.show()
+    plt.close(fig)
+
+
+# ------------------------------------------------------------
+# Run both
+# ------------------------------------------------------------
+if __name__ == "__main__":
+    plot_2d_engine(savepath="feedback_geometry_2d.png", show=False)
+    plot_3d_engine(savepath="feedback_geometry_3d.png", show=False)
+
+    print("Saved: feedback_geometry_2d.png")
+    print("Saved: feedback_geometry_3d.png")
+
+    # Uncomment to display interactively:
+    # plt.show()
+```
+
+**Requirements**
+
+```bash
+pip install numpy matplotlib
+```
+
+**Run**
+
+```bash
+python feedback_geometry_engine.py
+```
+
+This produces two transparent‑background renders:
+
+- `feedback_geometry_2d.png` — the layered 2D schematic.
+- `feedback_geometry_3d.png` — the 3D shell/vector engine.
 Friday, Jun 5
 You said
 import numpy as np
