@@ -3,7 +3,7 @@ I express even if they are prototypes.
 Make something big  express be first.
 ricky bobby!
 in the end you will be able to download the app like ship of harkdeen.
- 
+ it's also a cataloge of components. I'm building a meta meta platform one could say a ... Omnireality.(marrowweave)
  i would like to say i also have a enterprise computer
 more on that in bit...
 claims under way
