@@ -5,7 +5,7 @@ Unauthorized use, reproduction, or distribution is prohibited.
 meow 
  No one has ever built a platform that is itself a language.🗿
 ( names will change)( i fell  asleep before i finished)
-
+******NOT PRESENT YET:
 Magustelle:  the big language for the whole playground. the is the rules that make everything work together.meta- platform universal runtime substrate that governs technology like physics governs reality.”
 
 spec=human analogue of reality(governance across existence: the way continuity is enforced whether by math, science, law, biology, or society( it's a spine of 7 orbs..7 = the “sweet spot”)
@@ -48,8 +48,13 @@ MSON =is the analogue to physics and machine reality
 
 FRMSON = the analogue to fractal existence and cultural continuity.
 
-meowtada= the language of Nyanics it stops the universe from being destroyed  see bottom link.
-Below is a unified public-facing statement that brings together the **seed, universal substrate, language, AI, OS, prototype environment, creative/research/development studio, game engine, and universe-mirror** ideas into one coherent document.
+meowtada= the language of Nyanics .
+
+
+
+=====
+===
+===
 
 # pen — The Operating Language of Existence
 
