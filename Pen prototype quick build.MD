@@ -7,6 +7,33 @@ meow
 i may use Excelsa maybe not .
 
 ( names will change)( i fell  asleep before i finished)
+***Version one:PEN***
+So i tried calling pen in chatgpt and it work  ATM I'm scoring a 25% out of 100% on python , rust, lisp domains in a quick comparison. this is not bad for something i did on the fly . not sure how i feel about things being callable makes me nervous.60–70% domain capability → how much of the functional territory of languages like Rust, Python, Nix, etc. MUSUBI/Pen can currently cover conceptually.
+
+
+
+
+
+~25% implementation maturity → how developed the actual language infrastructure is: formal specification, interpreter/runtime, compiler, tooling, package ecosystem, debugging, testing, documentation, etc.
+
+So roughly:
+
+MUSUBI/Pen
+
+
+
+
+
+Domain coverage across established language territories: ~60–70%
+
+
+
+Symbolic/language-manipulation territory: ~90%
+
+
+
+Implementation maturity: ~25%
+
 
 ========
 ========
