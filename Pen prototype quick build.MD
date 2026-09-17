@@ -1,4 +1,8 @@
 pen- A universal tool
+© 2026 Darrell Lee Stiltner. All rights reserved.
+Pen™ is a  trademark of Darrell Lee Stiltner in the software domain.
+Unauthorized use, reproduction, or distribution is prohibited.
+meow 
 
 Below is a unified public-facing statement that brings together the **seed, universal substrate, language, AI, OS, prototype environment, creative/research/development studio, game engine, and universe-mirror** ideas into one coherent document.
 
