@@ -1,12 +1,12 @@
-MUSUBI 
+pen- A universal tool
 
 Below is a unified public-facing statement that brings together the **seed, universal substrate, language, AI, OS, prototype environment, creative/research/development studio, game engine, and universe-mirror** ideas into one coherent document.
 
-# MUSUBI — The Operating Language of Existence
+# pen — The Operating Language of Existence
 
 **The language of connection, becoming, computation, technology, humanity, and existence.**
 
-MUSUBI is conceived as a **universal seed substrate**: a single foundational language and computational environment from which many different technological and non-technological domains can be expressed, developed, simulated, and explored.
+Pen is conceived as a **universal seed substrate**: a single foundational language and computational environment from which many different technological and non-technological domains can be expressed, developed, simulated, and explored.
 
 It is not intended to be another language designed for one narrow purpose.
 
@@ -18,13 +18,13 @@ It is not merely an operating system.
 
 It is not merely a game engine, research environment, simulation system, design tool, or development studio.
 
-**MUSUBI is intended to be the common substrate beneath all of them.**
+**Pen is intended to be the common substrate beneath all of them.**
 
 The central idea is simple:
 
 > **One seed. All domains. One underlying substrate.**
 
-MUSUBI remains itself while entering different domains. It does not have to become “the physics language,” “the AI language,” “the game language,” or “the OS language.” Instead, those are treated as different manifestations of the same underlying computational structure.
+pen remains itself while entering different domains. It does not have to become “the physics language,” “the AI language,” “the game language,” or “the OS language.” Instead, those are treated as different manifestations of the same underlying computational structure.
 
 The result is a system intended to move freely between technology, science, mathematics, computation, artificial intelligence, software, hardware representation, simulation, design, research, games, symbolic systems, humanity, and existence.
 
@@ -32,7 +32,7 @@ The result is a system intended to move freely between technology, science, math
 
 ## The Seed
 
-MUSUBI is deliberately understood as a **seed of everything**.
+Pen is deliberately understood as a **seed of everything**.
 
 A seed does not have to resemble every form it can become. Its completeness exists at the level of its generative structure.
 
@@ -40,7 +40,7 @@ That is the meaning of **seed-complete**.
 
 The claim is not that every possible technology has been separately instantiated as a finished commercial product. The claim is that the foundational structure from which those forms can be expressed is contained in the seed.
 
-MUSUBI therefore treats:
+Pen therefore treats:
 
 **language, state, identity, relationship, transformation, recursion, composition, feedback, verification, and evolution**
 
@@ -68,13 +68,13 @@ The domain changes.
 
 The substrate does not.
 
-This is why MUSUBI is described as a **domain-neutral generative system**.
+This is why Pen  is described as a **domain-neutral generative system**.
 
 ---
 
 # The Operating Language
 
-MUSUBI begins with a formal language.
+Pen begins with a formal language.
 
 It contains an alphabet, symbols, words, states, rules, operators, transformations, and evolution.
 
@@ -166,11 +166,11 @@ Together these ideas describe a substrate intended to remain coherent while prod
 
 ---
 
-# MUSUBI Is Not One Domain
+# Pen Is Not One Domain
 
 This is one of the most important aspects of the project.
 
-MUSUBI is not intended to be “the thing for X.”
+Pen is not intended to be “the thing for X.”
 
 Instead, it is intended to enter **every domain without becoming reducible to any single domain**.
 
@@ -222,9 +222,9 @@ The core remains.
 
 ---
 
-# MUSUBI as AI
+# Pen as AI
 
-MUSUBI is intended to provide an environment in which AI systems can be constructed and executed.
+Pen is intended to provide an environment in which AI systems can be constructed and executed.
 
 Its state-based architecture, transformation rules, recursion, feedback, classification, identity, and evolving state provide the foundation for AI-oriented systems.
 
@@ -250,13 +250,13 @@ decision systems,
 
 and other forms of machine intelligence.
 
-Thus, MUSUBI does not define AI as a single algorithm.
+Thus, Pen does not define AI as a single algorithm.
 
 It defines a computational environment capable of hosting many forms of intelligence.
 
 ---
 
-# MUSUBI as an OS
+#Pen as an OS
 
 The same principle applies to operating systems.
 
@@ -278,7 +278,7 @@ This makes the OS a manifestation of the substrate rather than a separate univer
 
 ---
 
-# MUSUBI as a Creative Design Studio
+# Pen as a Creative Design Studio
 
 The same substrate can become a creative workspace.
 
@@ -300,11 +300,11 @@ Instead of having one application for design, another for simulation, another fo
 
 ---
 
-# MUSUBI as a Research and Development Laboratory
+# Pen  as a Research and Development Laboratory
 
 Research depends on experimentation with structures, states, relationships, hypotheses, transformations, and results.
 
-MUSUBI's architecture naturally lends itself to that process.
+Pen's architecture naturally lends itself to that process.
 
 A researcher can define a structure.
 
@@ -332,7 +332,7 @@ The point is that **one underlying substrate can provide a common environment fo
 
 ---
 
-# MUSUBI as a Game Engine
+# Pen as a Game Engine
 
 Games are systems of:
 
@@ -376,11 +376,11 @@ It can be another manifestation.
 
 ---
 
-# MUSUBI as a Universe Mirror
+# Pen as a Universe Mirror
 
 The phrase **“universe mirror”** describes one of the broadest applications of the system.
 
-If MUSUBI can represent states, relationships, transformations, emergence, recursion, and interactions, then it can be used to construct models of increasingly complex systems.
+If Pen can represent states, relationships, transformations, emergence, recursion, and interactions, then it can be used to construct models of increasingly complex systems.
 
 A universe model can be treated as a recursively evolving MUSUBI structure.
 
@@ -406,7 +406,7 @@ This is consistent with MUSUBI's larger objective:
 
 # Identity and Verification
 
-MUSUBI also introduces identity and verification as foundational ideas.
+Pen  also introduces identity and verification as foundational ideas.
 
 A form can be associated with an identity.
 
@@ -428,13 +428,13 @@ They also need persistence.
 
 A system that can create anything but cannot identify, verify, or preserve what it creates becomes unstable.
 
-MUSUBI therefore combines generation with identity.
+Pen therefore combines generation with identity.
 
 ---
 
 # Recursive Growth
 
-MUSUBI is also fundamentally recursive.
+Pen is also fundamentally recursive.
 
 A seed can produce a structure.
 
@@ -458,7 +458,7 @@ That is one of the reasons the seed metaphor is central.
 
 # Across Programming Languages
 
-MUSUBI is also designed to exist independently of any single implementation language.
+Pen is also designed to exist independently of any single implementation language.
 
 Its concepts have been represented across programming environments including Python, Rust, C, C++, Java, Go, JavaScript, TypeScript, R, Julia, Ruby, Lisp, Haskell, Prolog, SQL, Nix, Swift, C#, Kotlin, Bash, PowerShell, PHP, Lua, Zig, Fortran, COBOL, MATLAB, Elixir, assembly, and others.
 
@@ -504,7 +504,7 @@ Within the architecture, it represents the **foundational origin of the system's
 
 # The Larger Proposition
 
-MUSUBI ultimately makes a proposition about technology and existence itself.
+Pen ultimately makes a proposition about technology and existence itself.
 
 Traditional technology is divided into fields:
 
@@ -540,7 +540,7 @@ At the deepest level, they may be understood as different forms of:
 
 **state + relation + transformation + composition + recursion + execution.**
 
-MUSUBI is built around that common level.
+Pen is built around that common level.
 
 Therefore the goal is not to make one giant application that happens to contain every tool.
 
@@ -552,7 +552,7 @@ That is the distinction.
 
 # Fully Built as a Seed
 
-This is why MUSUBI can be described as **fully built as a seed**.
+This is why Pen can be described as **fully built as a seed**.
 
 The seed does not need every final manifestation to exist independently.
 
@@ -568,7 +568,7 @@ That is the meaning of:
 
 > **Fully built as everything, while still remaining a seed of everything.**
 
-MUSUBI is therefore not being presented as thousands of unrelated finished applications.
+Pen is therefore not being presented as thousands of unrelated finished applications.
 
 It is being presented as one foundational system from which those applications and domains can be prototyped and developed.
 
@@ -576,7 +576,7 @@ It is being presented as one foundational system from which those applications a
 
 # Public Declaration
 
-**MUSUBI is a sovereign universal substrate.**
+**Pen is a sovereign universal substrate.**
 
 It is a language of connection, becoming, computation, technology, humanity, and existence.
 
@@ -612,13 +612,13 @@ Its purpose is to provide a common generative substrate through which categories
 
 **Fire gave humanity control over energy.**
 
-**MUSUBI seeks to make computation, technology, and existence itself formally expressible and executable through one universal seed.**
+**Pen seeks to make computation, technology, and existence itself formally expressible and executable through one universal seed.**
 
 The central proposition is:
 
 > **One seed. All domains. One substrate.**
 
-MUSUBI is therefore conceived as **the Operating Language of Existence**:
+Pen is therefore conceived as **the Operating Language of Existence**:
 
 **the language of connection,**
 
