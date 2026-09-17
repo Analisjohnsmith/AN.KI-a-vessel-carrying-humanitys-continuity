@@ -11,7 +11,10 @@ meow
 ---
 
 ******
-THESE LANGS ARE NOT PRESENT YET:
+THESE LANGS ARE NOT PRESENT YET: I have to stdu6y how to make peer languages  to say go, rust lisp,rust etc.. 
+so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech \/
+
+
 Magustelle:  the big language for the whole playground. the is the rules that make everything work together.meta- platform universal runtime substrate that governs technology like physics governs reality.”
 
 spec=human analogue of reality(governance across existence: the way continuity is enforced whether by math, science, law, biology, or society( it's a spine of 7 orbs..7 = the “sweet spot”)
