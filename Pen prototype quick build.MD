@@ -28,7 +28,7 @@ Musubi= math analogue  of reality.(eye)
 
 Alien= analogue of reality/existence itself
 
-hson=Structured reality( HERMETICAL.STUCTURED.ONTOLOGICAL.Nook)
+hson=Structured reality( HERMETICAL.STUCTURED.ONTOLOGICAL.NOOK)
 
 lz=the mathematical seed of everything,
 
