@@ -34,6 +34,233 @@ Symbolic/language-manipulation territory: ~90%
 
 Implementation maturity: ~25%
 
+Yes. If you want the **diagram represented in code**, I'd make it much more comprehensive than the earlier tree: Pen as the seed, with foundational primitives at the center, then domain layers, language capabilities, and real-world application domains.
+
+```text id="6xk2p"
+PEN
+│
+├── 0. SEED / SUBSTRATE
+│   ├── Identity
+│   ├── Object
+│   ├── Relation
+│   ├── State
+│   ├── Context
+│   ├── Structure
+│   ├── Transformation
+│   ├── Process
+│   ├── Memory
+│   ├── Composition
+│   ├── Recursion
+│   ├── Persistence
+│   └── Evolution
+│
+├── 1. COMPUTATION
+│   ├── Algorithms
+│   ├── Logic
+│   ├── Symbolic computation
+│   ├── Functional computation
+│   ├── Procedural computation
+│   ├── Parallel computation
+│   ├── Distributed computation
+│   └── Autonomous computation
+│
+├── 2. LANGUAGE CAPABILITY LAYER
+│   ├── Python
+│   ├── Rust
+│   ├── Lisp
+│   ├── Nix
+│   ├── JSON
+│   ├── C
+│   ├── C++
+│   ├── Java
+│   ├── JavaScript
+│   ├── TypeScript
+│   ├── Go
+│   ├── Ruby
+│   ├── R
+│   ├── Julia
+│   ├── Swift
+│   ├── Kotlin
+│   ├── Lua
+│   ├── PHP
+│   ├── Haskell
+│   ├── SQL
+│   ├── Bash
+│   ├── PowerShell
+│   ├── MATLAB
+│   ├── Dart
+│   ├── Scala
+│   ├── Elixir
+│   ├── Erlang
+│   ├── C#
+│   ├── F#
+│   └── WebAssembly
+│
+├── 3. SOFTWARE
+│   ├── Applications
+│   ├── Libraries
+│   ├── Frameworks
+│   ├── Compilers
+│   ├── Interpreters
+│   ├── Operating systems
+│   ├── Package systems
+│   ├── Databases
+│   ├── Filesystems
+│   ├── Networking
+│   ├── Cloud systems
+│   └── Distributed systems
+│
+├── 4. HARDWARE
+│   ├── CPU
+│   ├── GPU
+│   ├── Memory
+│   ├── Storage
+│   ├── Embedded systems
+│   ├── Microcontrollers
+│   ├── Sensors
+│   ├── Robotics
+│   ├── Communications
+│   └── Physical computing
+│
+├── 5. AI / INTELLIGENCE
+│   ├── Machine learning
+│   ├── Neural networks
+│   ├── Agents
+│   ├── Reasoning
+│   ├── Planning
+│   ├── Knowledge systems
+│   ├── Tool use
+│   ├── Multimodal systems
+│   ├── Simulation
+│   └── Human-AI interaction
+│
+├── 6. MATHEMATICS / FORMAL KNOWLEDGE
+│   ├── Arithmetic
+│   ├── Algebra
+│   ├── Geometry
+│   ├── Calculus
+│   ├── Statistics
+│   ├── Probability
+│   ├── Logic
+│   ├── Set theory
+│   ├── Graph theory
+│   ├── Formal systems
+│   └── Computation theory
+│
+├── 7. SCIENCE
+│   ├── Physics
+│   ├── Chemistry
+│   ├── Biology
+│   ├── Neuroscience
+│   ├── Earth science
+│   ├── Astronomy
+│   ├── Ecology
+│   ├── Materials science
+│   └── Scientific simulation
+│
+├── 8. ENGINEERING
+│   ├── Mechanical
+│   ├── Electrical
+│   ├── Civil
+│   ├── Chemical
+│   ├── Computer
+│   ├── Aerospace
+│   ├── Systems engineering
+│   ├── Manufacturing
+│   └── Control systems
+│
+├── 9. INFORMATION / KNOWLEDGE
+│   ├── Documents
+│   ├── Data
+│   ├── Knowledge graphs
+│   ├── Archives
+│   ├── Search
+│   ├── Semantics
+│   ├── Ontologies
+│   ├── Communication
+│   └── Information exchange
+│
+├── 10. HUMAN DOMAINS
+│   ├── Individuals
+│   ├── Communication
+│   ├── Collaboration
+│   ├── Organizations
+│   ├── Education
+│   ├── Research
+│   ├── Creative work
+│   ├── Economics
+│   ├── Governance
+│   └── Culture
+│
+├── 11. PHYSICAL / NATURAL DOMAINS
+│   ├── Matter
+│   ├── Energy
+│   ├── Space
+│   ├── Time
+│   ├── Biological systems
+│   ├── Ecosystems
+│   ├── Planetary systems
+│   └── Physical processes
+│
+├── 12. APPLICATION DOMAINS
+│   ├── Desktop
+│   ├── Mobile
+│   ├── Web
+│   ├── Cloud
+│   ├── Robotics
+│   ├── Scientific computing
+│   ├── Manufacturing
+│   ├── Transportation
+│   ├── Infrastructure
+│   ├── Research
+│   └── Autonomous systems
+│
+└── 13. COMMON PEN OPERATIONS
+    ├── REPRESENT
+    ├── CONNECT
+    ├── COMPOSE
+    ├── TRANSFORM
+    ├── EXECUTE
+    ├── INVOKE
+    ├── OBSERVE
+    ├── STORE
+    ├── RETRIEVE
+    ├── COMMUNICATE
+    ├── SIMULATE
+    ├── EVOLVE
+    └── INTEROPERATE
+```
+
+The key architectural point is that **the branches aren't separate languages sitting beside Pen**.
+
+The intended relationship is:
+
+```text
+                    PEN SEED
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+   COMMON STRUCTURE          COMMON OPERATIONS
+          │                         │
+          └────────────┬────────────┘
+                       │
+                DOMAIN CAPABILITIES
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+   TECHNOLOGY      KNOWLEDGE       PHYSICAL
+        │              │              │
+     languages       science        matter
+     software        math           biology
+     hardware        logic          energy
+     AI              etc.           etc.
+        │              │              │
+        └──────────────┼──────────────┘
+                       ↓
+                 APPLICATIONS
+```
+
+So **“seed” is the important architectural idea**: Pen supplies the common substrate, while the domains are different manifestations/capabilities built through that substrate.
 
 ========
 ========
