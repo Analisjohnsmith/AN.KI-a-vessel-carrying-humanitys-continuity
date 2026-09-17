@@ -22,13 +22,14 @@ Musubi= math analogue  of reality.(eye)
 
 Alien= analogue of reality/existence itself
 
-hson=Structured reality( HERMETICAL.STUCTURED.ONTOLOGICAL.NEVERLAND)
+hson=Structured reality( HERMETICAL.STUCTURED.ONTOLOGICAL.Nook)
 
 lz=the mathematical seed of everything,
 
 Rafiki=the act of language itself — the human process of turning inner reality into outer existence
 
-omnicode:johnsmith Omnicode is universal system‑formation.The best IRL analogue for johnsmith Omnicode is biological reproduction+ genetics + evolution — a generative substrate that creates, enforces, propagates, and evolves systems across domains.
+hermetical java script (jhs)= ?
+\omnicode:johnsmith Omnicode is universal system‑formation.The best IRL analogue for johnsmith Omnicode is biological reproduction+ genetics + evolution — a generative substrate that creates, enforces, propagates, and evolves systems across domains.
 
 hazeldna=a synthetic lifeform analogue
 
