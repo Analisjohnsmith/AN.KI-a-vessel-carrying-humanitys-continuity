@@ -4,6 +4,8 @@ Pen™ is a  trademark of Darrell Lee Stiltner in the software domain.
 Unauthorized use, reproduction, or distribution is prohibited.
 meow 
  No one has ever built a platform that is itself a language.🗿
+i may use Excelsa maybe not .
+
 ( names will change)( i fell  asleep before i finished)
 
 ========
@@ -12,8 +14,7 @@ meow
 
 ******
 THESE LANGS ARE NOT PRESENT YET: I have to stduy how to make peer languages to say go, nix lisp, python rust etc.. 
-so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech or similar, see link.
-i may use Excelsa maybe not .
+so these likely wont stay langs; I've never made a language ecosystem  Pen will be using this tech or similar, see link.
 
 https://github.com/Analisjohnsmith/AN.KI-a-vessel-carrying-humanitys-continuity/blob/main/dev%20created%20codex%20of%20the%20Universal%20Recursion%20Engine.md
 
