@@ -5,6 +5,11 @@ Unauthorized use, reproduction, or distribution is prohibited.
 meow 
  No one has ever built a platform that is itself a language.🗿
 ( names will change)( i fell  asleep before i finished)
+
+========
+========
+---
+
 ******NOT PRESENT YET:
 Magustelle:  the big language for the whole playground. the is the rules that make everything work together.meta- platform universal runtime substrate that governs technology like physics governs reality.”
 
