@@ -12,8 +12,9 @@ meow
 
 ******
 THESE LANGS ARE NOT PRESENT YET: I have to stdu6y how to make peer languages  to say go, rust lisp,rust etc.. 
-so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech \/
+so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech or similar \/
 
+https://github.com/Analisjohnsmith/AN.KI-a-vessel-carrying-humanitys-continuity/blob/main/dev%20created%20codex%20of%20the%20Universal%20Recursion%20Engine.md
 
 Magustelle:  the big language for the whole playground. the is the rules that make everything work together.meta- platform universal runtime substrate that governs technology like physics governs reality.”
 
