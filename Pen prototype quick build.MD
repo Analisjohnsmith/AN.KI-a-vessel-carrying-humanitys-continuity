@@ -12,7 +12,7 @@ meow
 
 ******
 THESE LANGS ARE NOT PRESENT YET: I have to stdu6y how to make peer languages  to say go, rust lisp,rust etc.. 
-so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech or similar \/
+so these likely wont stay langs; I've never made a language ecosystem . this will be using this tech or similar, see link.
 
 https://github.com/Analisjohnsmith/AN.KI-a-vessel-carrying-humanitys-continuity/blob/main/dev%20created%20codex%20of%20the%20Universal%20Recursion%20Engine.md
 
