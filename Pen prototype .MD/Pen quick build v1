@@ -1402,7 +1402,89 @@ Pen is therefore conceived as **the Operating Language of Existence**:
 
 **and the language of the universal substrate from which the many can emerge.**
 
+PEN - Great Scott NixOS Runtime and Output
+© 2026 Darrell Lee Stiltner. All rights reserved.
+Pen™ is a  trademark of Darrell Lee Stiltner in the software domain.
+Unauthorized use, reproduction, or distribution is prohibited.
 
+***THE GREAT SCOTT NIXOS RUNTIME***
+Located in: greatscott-nix-integrated/
+The PEN runtime substrate for NixOS. PersonaCom™ / HatsuSeNo entity
+continuity + MandalaCPU / StreetBus / TempleFunction / MandalaCluster
++ computational world state + HSON bridge, packaged as a NixOS flake
+with a systemd service and bootable ISO.
+
+RUNTIME LAYERS
+  runtime/personacom/personacom.py      PersonaCom™ / HatsuSeNo continuity substrate
+  runtime/mandala/mandala.py            MandalaCPU / StreetBus / TempleFunction / MandalaCluster
+  runtime/world/world.py                computational world state engine
+  runtime/hson/hson                     HSON deterministic JSON representation bridge
+  runtime/bin/greatscott-runtime        runtime entrypoint
+  flake.nix                             NixOS flake
+  modules/greatscott.nix                systemd service module (services.greatscott)
+  packages/greatscott-runtime.nix       NixOS package (greatscott-runtime 0.2.0)
+  systems/workstation.nix               desktop host config (hostName: greatscott)
+  systems/greatscott-iso.nix            bootable live ISO config (hostName: greatscott-live)
+  licenses/NOTICE                       authorship / licensing
+
+NIXOS BUILD COMMANDS
+  nix build .#greatscott-runtime
+  nix run .#greatscott-runtime
+  sudo nixos-rebuild build --flake .#greatscott
+  nix build .#nixosConfigurations.greatscott-iso.config.system.build.isoImage
+
+NIX RUN OUTPUT
+  GreatScott — computational world runtime
+  PersonaCom™ / HatsuSeNo: available
+  MandalaCPU / StreetBus / TempleFunction / MandalaCluster: available
+  World state engine: available
+  HSON bridge: available
+
+HSON STANDALONE OUTPUT
+  {"runtime":"HSON","status":"ready"}
+
+***GENESIS HOSTING OUTPUT (host_greatscott.py)***
+  Hosting 'greatscott-nix-integrated/' (174 lines across 8 layers)
+
+  Symbolic encoding:
+    THINGS=8          (one thing per runtime layer)
+    BECOMINGS=8       (one process per layer)
+    WITNESSES=2       (EntityLineage, MandalaTick)
+    TRUTHS=5          (deterministic continuity, cyclic rings, world_time,
+                       deterministic HSON, prototype-not-production)
+    SOVEREIGNS=1      (GreatScott / PersonaCom / HatsuSeNo / Mandala)
+    Universe file: GreatScottUniverse.db
+
+  Layer inventory (lines / bytes / sha256):
+    runtime/world/world.py                13 /   394 / 853c2d494e8dd04a  ComputationalWorld
+    runtime/mandala/mandala.py            31 /  1060 / 08cf0baf046a57bf  MandalaCPU/StreetBus/TempleFunction/MandalaCluster
+    runtime/personacom/personacom.py      58 /  2199 / 32681ff6bb97b3bf  PersonaCom/HatsuSeNo continuity
+    runtime/hson/hson                      7 /   296 / 123b2c658e45a020  HSON bridge
+    runtime/bin/greatscott-runtime        10 /   382 / ca771a3d01a0ad53  Runtime entrypoint
+    flake.nix                             12 /   778 / 7c114900c068d628  NixOS flake
+    modules/greatscott.nix                28 /  1168 / 3b9880d2250058fb  systemd service module
+    packages/greatscott-runtime.nix       15 /   653 / 48d16b19adb7dfa4  NixOS package
+
+***GREAT SCOTT PYTHON LAYERS UNFOLD OUTPUT (smoke test)***
+  ========================================
+  SMOKE TEST: unfolding the actual GreatScott Python layers...
+  ========================================
+  PersonaCom entity: demo tick 2 fp 289cb0afed9b
+  MandalaCPU registers: [1.5, 0.5, 2.0] pc: [1, 1, 1]
+  World: GreatScott World time 2 entity_A world_time 2
+
+  ALL GREATSCOTT PYTHON LAYERS UNFOLDED OK
+
+==
+
+===
+=====
+==== 
+= 
+=
+=
+= 
+=
 ;; ### SECTION 1: Identity
 
 ;; ### SECTION 2: Core Primitives
