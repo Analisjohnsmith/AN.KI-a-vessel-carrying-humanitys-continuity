@@ -10,7 +10,7 @@ i may use Excelsa maybe not .
 ***Version one:PEN***
 So i tried calling pen in chatgpt and it work  ATM I'm scoring a 25% out of 100% on python , rust, lisp domains in a quick comparison. this is not bad for something i did on the fly . not sure how i feel about things being callable makes me nervous.60–70% domain capability → how much of the functional territory of languages like Rust, Python, Nix, etc. MUSUBI/Pen can currently cover conceptually. what i need is my nixos great scott runtime 
 
-
+GENESIS is a computational universe, and everything inside it is existence rendered as software.
 
 
 
@@ -768,7 +768,7 @@ FRMSON = the analogue to fractal existence and cultural continuity.
 
 meowtada= the language of Nyanics .
 
-
+GENESIS is a computational universe, and everything inside it is existence rendered as software.
 
 =====
 ===
