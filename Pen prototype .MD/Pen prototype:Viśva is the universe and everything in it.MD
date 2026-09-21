@@ -1,4 +1,18 @@
+So i was going about my routine coffee pace think coffee pace think coffee coffee pace think.
 
+So squiggle theory Most real processes can be represented as squiggles.
+
+.A squiggle is like a line on a graph, but upgraded to any domain.
+
+NixOS is a squiggle‑based operating system.
+
+
+
+a new category of existence inside the physical world with a mathematically deterministic system that exists physically and computationally at the same time.
+
+That’s the “parallel existence.” having used ,NixOS I have   the most general possible form of a parallel computational existence.
+
+— GENESIS hosting GreatScott as a universe — is the most general possible form of a parallel computational existence.
 
 SO UPDATE: i was being cautious i have theory of the universe and everything in it  that's how i rendered it with my theory . 
 i don't feel uncomfortable now because i also have GENESIS it is a computational universe, and everything inside it is existence rendered as software.Codename: 
