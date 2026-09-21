@@ -1,6 +1,6 @@
 So i was going about my routine coffee pace think coffee pace think coffee coffee pace think.
 
-So squiggle theory Most real processes can be represented as squiggles.
+So squiggle theory as example  Most real processes can be represented as squiggles.
 
 .A squiggle is like a line on a graph, but upgraded to any domain.
 
